@@ -420,9 +420,14 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   text-decoration: none;
   color: inherit;
 }
+.project-row .pr-image {
+  aspect-ratio: 3 / 2;         /* reserve a 3:2 slot — most tiles match */
+  overflow: hidden;
+}
 .project-row .pr-image img {
   width: 100%;
-  height: auto;                /* natural aspect — never cropped */
+  height: 100%;
+  object-fit: cover;           /* fill the reserved 3:2 slot */
   display: block;
   transition: filter 300ms;
 }
@@ -867,10 +872,13 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
 /* Hero (project) — runs shell-edge to shell-edge, same as the home hero */
 .project-hero {
   padding: 0;
+  aspect-ratio: 3 / 2;       /* reserve space before the image loads */
+  overflow: hidden;
 }
 .project-hero img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 /* Landscape frame — used when a project has no landscape hero image.
@@ -1303,7 +1311,11 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   gap: 80px;
   align-items: start;
 }
-.principal__portrait img { width: 100%; height: auto; display: block; }
+.principal__portrait {
+  aspect-ratio: 3 / 2;          /* Phil's portrait file is 500x333 landscape */
+  overflow: hidden;
+}
+.principal__portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .principal__caption {
   display: flex;
   justify-content: space-between;
@@ -1442,9 +1454,11 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
 }
 .team-member__portrait {
   width: 100%;
+  aspect-ratio: 4 / 3;          /* team headshots are 500x375 landscape */
+  overflow: hidden;
   background: var(--softBg);
 }
-.team-member__portrait img { width: 100%; height: auto; display: block; }
+.team-member__portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .team-member__role {
   font-family: var(--mono);
   font-size: 10px;
