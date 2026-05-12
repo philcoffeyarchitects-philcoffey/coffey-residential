@@ -210,7 +210,9 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    /* Right-align so links sit nearer the thumb when holding a phone
+       one-handed. Text inside each link also reads right-aligned. */
+    align-items: flex-end;
     justify-content: center;
     gap: 28px;
     padding: 80px 32px;
@@ -232,6 +234,7 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
     font-size: 32px;
     line-height: 1.1;
     letter-spacing: -0.015em;
+    text-align: right;
   }
   .site-nav a.is-active {
     text-decoration: none;
@@ -1067,6 +1070,13 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   .facts__cell:nth-child(2n) { border-right: 0; }
   .facts__cell:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
   .facts__cell:nth-last-child(-n+2) { border-bottom: 0; }
+  /* Every left-column cell sits flush with the page gutter, every
+     right-column cell extends to the right gutter. The :first-child
+     / :last-child rules from desktop only catch cells 1 and 4 — but
+     in a 2-col mobile grid cell 3 is also "first in row" and cell 2
+     is "last in row", so they need the same flush treatment. */
+  .facts__cell:nth-child(2n+1) { padding-left: 0; }
+  .facts__cell:nth-child(2n)   { padding-right: 0; }
 }
 
 /* Section-headed two-column pattern (280px label / 1fr content) */
@@ -1209,7 +1219,10 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   .gallery__grid > * {
     margin: 0 0 8px 0;
   }
-  .g-quote { padding: 64px 0; }
+  /* Add horizontal padding so the italic mid-quote doesn't run to
+     the screen edges on phones — matches the page gutter used by
+     the rest of the project copy. */
+  .g-quote { padding: 64px 24px; }
   .g-quote p { font-size: 24px; }
 }
 
