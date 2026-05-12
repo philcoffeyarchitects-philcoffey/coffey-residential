@@ -288,48 +288,51 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   max-width: 1100px;
 }
 .hero__head > div { display: block; }
-.hero__foot {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
-  margin-top: 36px;
-  flex-wrap: wrap;
-}
 .hero__sub {
   max-width: 420px;
   font-size: 15px;
   line-height: 1.55;
   opacity: 0.9;
-  margin: 0;
+  margin: 36px 0 0 0;
+}
+.hero__cta {
+  position: absolute;
+  right: 56px;
+  bottom: 56px;
+  z-index: 3;
 }
 
 @media (max-width: 800px) {
   .hero__inner { padding: 32px 24px; }
   .hero__head { font-size: 56px; }
   .hero__sub { font-size: 14px; }
+  .hero__cta { right: 24px; bottom: 24px; }
 }
 
 @media (max-width: 700px) {
-  /* On phones, the 3:2 hero image is too short to hold the eyebrow,
-     two-line H1, sub-copy and CTA without clipping. Move the text
-     OUT of the absolute overlay so it sits in its own block below
-     the image. The .hero element already has the dark background
-     colour, so the text panel reads as a continuous extension of
-     the image. Everything fits, nothing clips. */
+  /* On phones, text sits OVER the image (eyebrow, H1, sub) and the
+     CTA drops below the image into normal flow. The 3:2 image just
+     fits the text block when CTA is excluded; the CTA gets its own
+     space underneath. */
   .hero { overflow: visible; }
   .hero__inner {
-    position: static;
-    inset: auto;
-    padding: 24px 20px 28px;
-    justify-content: flex-start;
+    /* Stay absolute over the image, tighten padding so eyebrow +
+       2-line H1 + 2-line sub all fit comfortably. */
+    padding: 20px 20px 18px;
     gap: 12px;
   }
   .hero__head {
     font-size: 48px;
     line-height: 0.98;
   }
-  .hero__foot { margin-top: 12px; }
+  .hero__sub { margin-top: 12px; }
+  .hero__cta {
+    /* Drop out of the absolute overlay and sit in normal flow
+       below the image. */
+    position: static;
+    display: inline-flex;
+    margin: 16px 20px 28px;
+  }
 }
 
 /* ============= Sections (generic) ============= */
