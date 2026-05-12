@@ -1,0 +1,28 @@
+# Netlify redirects — preserve SEO authority from the old Squarespace URLs.
+# Format: from-path  to-path  status
+
+# ── Top-level pages ───────────────────────────────────────────────────
+/home                                       /                  301
+/who-we-are                                 /studio            301
+/our-services-coffey-residential            /process           301
+/press-coffey-residential                   /press             301
+/awards-coffey-residential                  /press             301
+/testimonials-coffey-residential            /studio            301
+/contact-us-coffey-residential              /contact           301
+/book-a-free-consultation-coffey-residential /contact          301
+/portfolio-coffey-residential               /homes             301
+/portfolio-coffey-residential-1             /homes             301
+
+# ── Blog → Journal (474 posts, slugs preserved) ──────────────────────
+/blog                                       /journal           301
+/blog/*                                     /journal/:splat    301
+
+# ── Project pages: slugs already match, so we explicitly catch any
+# trailing-slash variants and the one project that's been removed ────
+/step-house-canada-water                    /homes             301
+
+# ── Other Squarespace pages with no equivalent on the new site ───────
+/privacy-policy                             /                  301
+
+# Pretty URLs already work for the new project pages because Netlify
+# serves /[slug].html when /[slug] is requested.

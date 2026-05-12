@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Coffey Residential — High End Residential Architects, London</title>
+<meta name="description" content="Coffey Residential is a high end residential architects studio in London. Bespoke family homes, refurbishments and extensions across Hampstead, Notting Hill, Holland Park, Belgravia and Highgate. Founded by Phil Coffey, Young Architect of the Year 2012." />
+<meta name="keywords" content="High End Residential Architects London, Residential Architects London, Luxury Architects London, Bespoke Homes London, Phil Coffey, Coffey Residential" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://coffey.london/" />
+<meta property="og:title" content="Coffey Residential — High End Residential Architects, London" />
+<meta property="og:description" content="Bespoke family homes across London. Light, proportion and material care." />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ArchitectAndEngineer",
+  "name": "Coffey Residential",
+  "description": "High End Residential Architects in London. Bespoke family homes, refurbishments and extensions.",
+  "founder": "Phil Coffey",
+  "foundingDate": "2005",
+  "areaServed": "London",
+  "address": { "@type": "PostalAddress", "streetAddress": "104–110 Goswell Road", "addressLocality": "London", "postalCode": "EC1V 7DH", "addressRegion": "Clerkenwell", "addressCountry": "GB" },
+  "url": "https://coffeyresidential.com/", "email": "contact@coffeyresidential.com",
+  "knowsAbout": ["Residential Architecture", "Luxury Homes", "Refurbishment", "Extensions", "Listed Buildings"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Libre+Caslon+Text:ital,wght@0,400;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500&family=EB+Garamond:ital,wght@0,400;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Serif+Caption:ital,wght@0,400;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Spectral:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&family=DM+Serif+Display:ital,wght@0,400;1,400&family=Tenor+Sans&family=Inter+Tight:wght@400;500&family=Work+Sans:wght@400;500&family=Manrope:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9; }
+  * { box-sizing: border-box; }
+  /* Hide canvas overflow but allow tall artboards */
+  body { overflow: hidden; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="parts.jsx"></script>
+<script type="text/babel" src="variations.jsx"></script>
+<script type="text/babel" src="homes.jsx"></script>
+<script type="text/babel" src="project.jsx"></script>
+<script type="text/babel" src="studio.jsx"></script>
+<script type="text/babel" src="process.jsx"></script>
+<script type="text/babel" src="press.jsx"></script>
+<script type="text/babel" src="journal.jsx"></script>
+<script type="text/babel" src="contact.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "headlineFont": "PT Serif",
+  "bodyFont": "Work Sans",
+  "heroMedia": "image",
+  "gridDensity": "sparse",
+  "palette": "bone",
+  "copy": "confident"
+}/*EDITMODE-END*/;
+
+const PALETTES = {
+  bone:    { bg: '#f3eee2', fg: '#1a1714', muted: 'rgba(26,23,20,.55)', line: 'rgba(26,23,20,.13)', cta: '#1a1714', ctaFg: '#f3eee2', accent: '#9a7a45', softBg: '#ebe5d4' },
+  ivory:   { bg: '#faf7f0', fg: '#171614', muted: 'rgba(23,22,20,.55)', line: 'rgba(23,22,20,.10)', cta: '#171614', ctaFg: '#faf7f0', accent: '#5b6e5b', softBg: '#f1ebdd' },
+  stone:   { bg: '#e6e2d8', fg: '#22251f', muted: 'rgba(34,37,31,.55)', line: 'rgba(34,37,31,.13)', cta: '#22251f', ctaFg: '#e6e2d8', accent: '#7a8a73', softBg: '#dcd7ca' },
+  ink:     { bg: '#15130f', fg: '#f1ece0', muted: 'rgba(241,236,224,.55)', line: 'rgba(241,236,224,.13)', cta: '#c8a878', ctaFg: '#15130f', accent: '#c8a878', softBg: '#1d1a14' },
+};
+
+const FONT_OPTIONS = [
+  // serifs — most likely picks for an architecture studio
+  { value: 'PT Serif',            label: 'PT Serif' },
+  { value: 'Cormorant Garamond',  label: 'Cormorant' },
+  { value: 'EB Garamond',         label: 'EB Garamond' },
+  { value: 'Libre Caslon Text',   label: 'Libre Caslon' },
+  { value: 'Source Serif 4',      label: 'Source Serif' },
+  { value: 'Spectral',            label: 'Spectral' },
+  { value: 'Lora',                label: 'Lora' },
+  { value: 'Crimson Pro',         label: 'Crimson' },
+  { value: 'Fraunces',            label: 'Fraunces' },
+  { value: 'Playfair Display',    label: 'Playfair' },
+  { value: 'DM Serif Display',    label: 'DM Serif' },
+  // sans — kept for contrast
+  { value: 'Tenor Sans',          label: 'Tenor Sans' },
+  { value: 'Bricolage Grotesque', label: 'Bricolage' },
+];
+
+// Body fonts — readable at small sizes. Mix of sans and a few text serifs.
+const BODY_FONT_OPTIONS = [
+  { value: 'Inter Tight',         label: 'Inter Tight' },
+  { value: 'Work Sans',           label: 'Work Sans' },
+  { value: 'Manrope',             label: 'Manrope' },
+  { value: 'IBM Plex Sans',       label: 'IBM Plex Sans' },
+  { value: 'Plus Jakarta Sans',   label: 'Plus Jakarta' },
+  { value: 'PT Serif',            label: 'PT Serif' },
+  { value: 'IBM Plex Serif',      label: 'IBM Plex Serif' },
+  { value: 'Source Serif 4',      label: 'Source Serif' },
+  { value: 'Spectral',            label: 'Spectral' },
+  { value: 'Lora',                label: 'Lora' },
+];
+
+// The wordmark is fixed to PT Serif Caption regardless of headline tweak.
+const WORDMARK_FONT = '"PT Serif Caption", "PT Serif", Georgia, serif';
+window.WORDMARK_FONT = WORDMARK_FONT;
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const palette = PALETTES[t.palette];
+  const props = {
+    headlineFont: `"${t.headlineFont}", "Cormorant Garamond", Georgia, serif`,
+    bodyFont: `"${t.bodyFont}", "Inter Tight", system-ui, sans-serif`,
+    heroMedia: t.heroMedia,
+    gridDensity: t.gridDensity,
+    palette,
+    copy: t.copy,
+  };
+  return (
+    <>
+      <DesignCanvas>
+        <DCSection id="chosen" title="Coffey Residential — Homepage" subtitle="Editorial Hybrid · the chosen direction. Click to focus.">
+          <DCArtboard id="v6" label="Homepage" width={1440} height={7200}>
+            <V6Hybrid {...props} />
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="contact" title="Contact" subtitle="Enquiry form + studio details. Underlined fields, chip-row selectors, schematic map.">
+          <DCArtboard id="contact-main" label="Contact" width={1440} height={4400}>
+            <ContactPage {...props} />
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="journal" title="Journal" subtitle="Index + a single article. Read “On the architecture of light” open in the article artboard.">
+          <DCArtboard id="journal-index" label="Journal · Index" width={1440} height={4800}>
+            <JournalIndexPage {...props} />
+          </DCArtboard>
+          <DCArtboard id="journal-article" label="Journal · Article" width={1440} height={4400}>
+            <JournalArticlePage {...props} />
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="press" title="Press &amp; Awards page" subtitle="Editorial index — awards table, press list by year, outlet wall, press kit.">
+          <DCArtboard id="press-main" label="Press &amp; Awards" width={1440} height={5400}>
+            <PressPage {...props} />
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="process" title="Process page" subtitle="How working with the studio actually goes — 8 stages, fees, FAQ.">
+          <DCArtboard id="process-main" label="Process" width={1440} height={5800}>
+            <ProcessPage {...props} />
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="studio" title="Studio page" subtitle="Phil + philosophy + values + team.">
+          <DCArtboard id="studio-main" label="Studio" width={1440} height={5600}>
+            <StudioPage {...props} />
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="project" title="Project page — single home" subtitle="Hampstead House as the worked example. Same chassis applies to every project.">
+          <DCArtboard id="project-hampstead" label="Project · Hampstead House" width={1440} height={8400}>
+            <ProjectPage {...props} />
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="homes" title="Homes — index page" subtitle="Locked direction: full-bleed alternating.">
+          <DCArtboard id="homes-fullbleed" label="Homes" width={1440} height={7200}>
+            <HomesFullBleed {...props} />
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="archive" title="Archive" subtitle="Earlier explorations, kept for reference.">
+          <DCArtboard id="homes-grid" label="Homes · Editorial grid (alt)" width={1440} height={3800}>
+            <HomesGrid {...props} />
+          </DCArtboard>
+          <DCArtboard id="homes-list" label="Homes · Archive list (alt)" width={1440} height={3400}>
+            <HomesList {...props} />
+          </DCArtboard>
+          <DCArtboard id="v1" label="01 · Editorial Classic" width={1440} height={5800}>
+            <V1Editorial {...props} />
+          </DCArtboard>
+          <DCArtboard id="v2" label="02 · Quiet Type-led" width={1440} height={6200}>
+            <V2Quiet {...props} />
+          </DCArtboard>
+          <DCArtboard id="v3" label="03 · Cinematic Dark" width={1440} height={6800}>
+            <V3Cinematic {...props} />
+          </DCArtboard>
+          <DCArtboard id="v4" label="04 · Warm Asymmetric" width={1440} height={6400}>
+            <V4Warm {...props} />
+          </DCArtboard>
+          <DCArtboard id="v5" label="05 · Modern Index" width={1440} height={6200}>
+            <V5Index {...props} />
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+
+      <TweaksPanel title="Coffey · Tweaks">
+        <TweakSection label="Type">
+          <TweakSelect label="Headline font" value={t.headlineFont} options={FONT_OPTIONS}
+            onChange={(v) => setTweak('headlineFont', v)} />
+          <TweakSelect label="Body font" value={t.bodyFont} options={BODY_FONT_OPTIONS}
+            onChange={(v) => setTweak('bodyFont', v)} />
+        </TweakSection>
+        <TweakSection label="Hero">
+          <TweakRadio label="Media" value={t.heroMedia}
+            options={[{value:'image',label:'Image'},{value:'video',label:'Video'}]}
+            onChange={(v) => setTweak('heroMedia', v)} />
+        </TweakSection>
+        <TweakSection label="Grid">
+          <TweakRadio label="Density" value={t.gridDensity}
+            options={[{value:'sparse',label:'Sparse'},{value:'regular',label:'Reg.'},{value:'dense',label:'Dense'}]}
+            onChange={(v) => setTweak('gridDensity', v)} />
+        </TweakSection>
+        <TweakSection label="Palette">
+          <TweakColor label="Theme" value={PALETTES[t.palette].bg}
+            options={Object.values(PALETTES).map(p => [p.bg, p.fg, p.accent])}
+            onChange={(arr) => {
+              const match = Object.entries(PALETTES).find(([,p]) => p.bg === arr[0]);
+              if (match) setTweak('palette', match[0]);
+            }} />
+        </TweakSection>
+        <TweakSection label="Copy">
+          <TweakRadio label="Tone" value={t.copy}
+            options={[{value:'confident',label:'Confident'},{value:'quiet',label:'Quiet'},{value:'editorial',label:'Editorial'}]}
+            onChange={(v) => setTweak('copy', v)} />
+        </TweakSection>
+      </TweaksPanel>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

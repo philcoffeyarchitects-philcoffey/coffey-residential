@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /pages-html/
+Disallow: /journal/_raw/
+Disallow: /design_handoff_coffey_residential/
+
+Sitemap: https://coffeyresidential.com/sitemap.xml

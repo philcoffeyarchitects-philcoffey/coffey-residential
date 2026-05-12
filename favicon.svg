@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- bone background, dark ink C in PT Serif Caption italic -->
+  <rect width="64" height="64" fill="#f6f3ec"/>
+  <text x="32" y="34" text-anchor="middle" dominant-baseline="central"
+        font-family="'PT Serif Caption', Georgia, serif"
+        font-size="48" font-style="italic" font-weight="400" fill="#1a1916">C</text>
+</svg>

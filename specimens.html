@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Coffey | Architects — Five directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Serif+Caption:ital@0;1&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@300;400&family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ============== shared base ============== */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'PT Serif', Georgia, serif;
+    color: #1a1814;
+    background: #efeae1;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+
+  .intro {
+    padding: 14vh 8vw 10vh;
+    max-width: 900px;
+  }
+  .intro .mark {
+    font-family: 'PT Serif Caption', Georgia, serif;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    font-size: 18px;
+    margin-bottom: 6vh;
+    color: #6a675e;
+  }
+  .intro h1 {
+    font-family: 'PT Serif', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4.4vw, 54px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 1em 0;
+  }
+  .intro p {
+    max-width: 60ch;
+    color: #4d4a44;
+    margin: 0 0 1em 0;
+  }
+  .intro .meta {
+    margin-top: 4em;
+    font-size: 14px;
+    color: #8a857b;
+    font-style: italic;
+  }
+
+  /* sticky side index */
+  .index {
+    position: fixed;
+    top: 50%;
+    right: 28px;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .index a {
+    text-decoration: none;
+    color: rgba(26, 24, 20, 0.35);
+    padding: 4px 8px;
+    border-right: 2px solid transparent;
+    transition: color 200ms, border-color 200ms;
+    text-align: right;
+  }
+  .index a.is-active { color: #1a1814; border-right-color: currentColor; }
+  .index a:hover { color: #1a1814; }
+  @media (max-width: 900px) { .index { display: none; } }
+
+  /* ============== panel scaffolding ============== */
+  .spec {
+    min-height: 100vh;
+    padding: 14vh 8vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6vh;
+    position: relative;
+  }
+  .spec__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4em;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+  }
+  .spec__num {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: inherit;
+    opacity: 0.5;
+  }
+  .spec__nav {
+    display: flex;
+    gap: 1.6em;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+  .spec__hero {
+    margin: 0;
+  }
+  .spec__lede {
+    max-width: 60ch;
+  }
+  .spec__work {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4vw;
+    align-items: end;
+  }
+  @media (max-width: 800px) {
+    .spec__work { grid-template-columns: 1fr; }
+  }
+  .spec__caption {
+    padding-bottom: 0.4em;
+  }
+  .spec__caption h3 {
+    margin: 0 0 0.3em 0;
+    font-weight: 400;
+  }
+  .spec__caption p { margin: 0; }
+  .spec__notes {
+    margin-top: 4vh;
+    padding-top: 2em;
+    border-top: 1px solid currentColor;
+    border-color: rgba(0,0,0,0.12);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2em;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    opacity: 0.75;
+  }
+  .spec__notes dt {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 10px;
+    opacity: 0.6;
+    margin-bottom: 0.3em;
+  }
+  .spec__notes dd { margin: 0 0 0.6em; }
+  .swatches { display: flex; gap: 8px; margin-top: 6px; }
+  .swatches span {
+    display: inline-block;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.12);
+  }
+
+  /* ============== 01 EDITORIAL PRESS ============== */
+  .spec--editorial {
+    background: #f4f0ea;
+    color: #1a1814;
+  }
+  .spec--editorial .mark {
+    font-family: 'PT Serif Caption', Georgia, serif;
+    font-style: italic;
+    font-size: 19px;
+    letter-spacing: 0.02em;
+  }
+  .spec--editorial .spec__hero {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: "opsz" 96;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(40px, 6vw, 84px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    max-width: 18ch;
+  }
+  .spec--editorial .spec__lede {
+    font-size: 18px;
+    color: #4a4640;
+    line-height: 1.6;
+  }
+  .spec--editorial figure { margin: 0; }
+  .spec--editorial .spec__caption h3 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 28px;
+  }
+  .spec--editorial .spec__caption .meta {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #7a7770;
+    margin-bottom: 0.6em;
+  }
+  .spec--editorial .award {
+    font-style: italic;
+    color: #4a4640;
+  }
+
+  /* ============== 02 MODERNIST GROTESQUE ============== */
+  .spec--grotesque {
+    background: #faf8f4;
+    color: #2a2a2a;
+  }
+  .spec--grotesque .mark {
+    font-family: 'PT Serif Caption', Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+  }
+  .spec--grotesque .spec__nav {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    font-size: 13px;
+  }
+  .spec--grotesque .spec__hero {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: clamp(34px, 4.6vw, 60px);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    max-width: 22ch;
+  }
+  .spec--grotesque .spec__lede {
+    font-size: 17px;
+    line-height: 1.65;
+    color: #3d3d3d;
+  }
+  .spec--grotesque .spec__caption h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+  .spec--grotesque .spec__caption .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #7a7770;
+    margin-bottom: 0.5em;
+  }
+  .spec--grotesque .award {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+
+  /* ============== 03 STUDIO QUIET (single family) ============== */
+  .spec--quiet {
+    background: #f7f3ec;
+    color: #1a1814;
+  }
+  .spec--quiet .mark {
+    font-family: 'PT Serif Caption', Georgia, serif;
+    font-style: italic;
+    font-size: 19px;
+  }
+  .spec--quiet .spec__nav {
+    font-family: 'PT Sans', sans-serif;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-size: 14px;
+    font-style: italic;
+  }
+  .spec--quiet .spec__hero {
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 4.8vw, 64px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    max-width: 22ch;
+  }
+  .spec--quiet .spec__hero em {
+    font-style: italic;
+    color: #7c3a32;
+  }
+  .spec--quiet .spec__lede {
+    font-size: 18px;
+    color: #4a4640;
+  }
+  .spec--quiet .works-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(0,0,0,0.12);
+  }
+  .spec--quiet .works-list li {
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    padding: 1.2em 0;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 2em;
+    align-items: baseline;
+    font-size: 19px;
+  }
+  .spec--quiet .works-list li:hover .name { color: #7c3a32; }
+  .spec--quiet .works-list .name { font-style: italic; transition: color 200ms; }
+  .spec--quiet .works-list .where {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: #7a7770;
+  }
+  .spec--quiet .works-list .year {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: #7a7770;
+  }
+  .spec--quiet .award {
+    font-style: italic;
+    color: #4a4640;
+  }
+
+  /* ============== 04 ARCHITECTURAL MONO ============== */
+  .spec--mono {
+    background: #f6f3ec;
+    color: #16140f;
+  }
+  .spec--mono .mark {
+    font-family: 'PT Serif Caption', Georgia, serif;
+    font-style: italic;
+    font-size: 19px;
+  }
+  .spec--mono .spec__num,
+  .spec--mono .spec__nav,
+  .spec--mono .meta-mono,
+  .spec--mono .works-mono .meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 12px;
+  }
+  .spec--mono .spec__hero {
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: 1.18;
+    max-width: 24ch;
+  }
+  .spec--mono .spec__lede {
+    font-size: 17px;
+    color: #3d3a32;
+  }
+  .spec--mono .works-mono {
+    border-top: 1px solid #d8d2c5;
+    margin-top: 2vh;
+  }
+  .spec--mono .works-mono .row {
+    display: grid;
+    grid-template-columns: 60px 1fr 200px 100px;
+    gap: 1.5em;
+    padding: 1em 0;
+    border-bottom: 1px solid #d8d2c5;
+    align-items: baseline;
+  }
+  .spec--mono .works-mono .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 300;
+    color: #a14e2a;
+    font-size: 13px;
+  }
+  .spec--mono .works-mono .name {
+    font-family: 'PT Serif', serif;
+    font-size: 19px;
+  }
+  .spec--mono .works-mono .meta { color: #7a7770; }
+  @media (max-width: 700px) {
+    .spec--mono .works-mono .row { grid-template-columns: 40px 1fr; }
+    .spec--mono .works-mono .row .meta { grid-column: 2; }
+  }
+  .spec--mono .award {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  /* ============== 05 CINEMA OF LIGHT ============== */
+  .spec--cinema {
+    background: #16140f;
+    color: #ebe4d6;
+  }
+  .spec--cinema .spec__notes { border-color: rgba(235, 228, 214, 0.18); }
+  .spec--cinema .swatches span { border-color: rgba(235, 228, 214, 0.18); }
+  .spec--cinema .mark {
+    font-family: 'PT Serif Caption', Georgia, serif;
+    font-style: italic;
+    font-size: 19px;
+    color: #ebe4d6;
+  }
+  .spec--cinema .spec__nav {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .spec--cinema .spec__hero {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(44px, 6.4vw, 96px);
+    line-height: 1.05;
+    letter-spacing: -0.005em;
+    color: #ebe4d6;
+    max-width: 18ch;
+  }
+  .spec--cinema .spec__lede {
+    font-size: 18px;
+    color: #c9c2b3;
+    line-height: 1.7;
+  }
+  .spec--cinema figure img {
+    filter: brightness(0.95) contrast(1.05);
+  }
+  .spec--cinema .spec__caption h3 {
+    font-family: 'Tenor Sans', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ebe4d6;
+  }
+  .spec--cinema .spec__caption .meta {
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #b08c3f;
+    margin-bottom: 0.6em;
+  }
+  .spec--cinema .award {
+    color: #c9c2b3;
+    font-style: italic;
+    border-top: 1px solid rgba(176, 140, 63, 0.4);
+    padding-top: 1em;
+  }
+  .spec--cinema .spec__notes { color: #c9c2b3; opacity: 0.85; }
+</style>
+</head>
+<body>
+
+<aside class="index" id="sideIndex">
+  <a href="#one">01 · Editorial</a>
+  <a href="#two">02 · Grotesque</a>
+  <a href="#three">03 · Studio quiet</a>
+  <a href="#four">04 · Mono</a>
+  <a href="#five">05 · Cinema</a>
+</aside>
+
+<header class="intro">
+  <div class="mark">Coffey | Architects</div>
+  <h1>Five directions for the new site.</h1>
+  <p>Same wordmark, same body type, same content. The variable is everything else: the headline typeface, the palette, the layout posture and the mood.</p>
+  <p>Body type is <strong>PT Serif</strong> throughout. The wordmark is set in <strong>PT Serif Caption</strong> italic. Scroll to compare. Use the index on the right to jump.</p>
+  <p class="meta">Specimens — for review, not the finished site.</p>
+</header>
+
+<!-- ============== 01 EDITORIAL PRESS ============== -->
+<section id="one" class="spec spec--editorial">
+  <div class="spec__header">
+    <div class="mark">Coffey | Architects</div>
+    <nav class="spec__nav"><span>Work</span><span>Studio</span><span>Recognition</span><span>Contact</span></nav>
+    <span class="spec__num">01 — Editorial press</span>
+  </div>
+
+  <h2 class="spec__hero">Houses, drawn around the way you live.</h2>
+
+  <p class="spec__lede">A small London studio, working with private clients on new houses, additions and refurbishments. We are interested in light, in time, and in how a home changes through a day and through a life.</p>
+
+  <figure class="spec__work">
+    <img src="images/webp/meadow-grove-living.webp" alt="Meadow Grove living room" loading="lazy">
+    <figcaption class="spec__caption">
+      <div class="meta">Meadow Grove · Barnes · 2021</div>
+      <h3>A garden room framed for morning light.</h3>
+      <p>Living and dining gathered around a long view of the lawn, with a low fireplace and oak floors that warm under the sun.</p>
+    </figcaption>
+  </figure>
+
+  <p class="award">Individual House Architect of the Year — BDOnline, 2023.</p>
+
+  <dl class="spec__notes">
+    <div><dt>Headline</dt><dd>Fraunces light italic</dd></div>
+    <div><dt>Body</dt><dd>PT Serif</dd></div>
+    <div><dt>Logo</dt><dd>PT Serif Caption italic</dd></div>
+    <div><dt>Palette</dt><dd>
+      <div class="swatches"><span style="background:#f4f0ea"></span><span style="background:#1a1814"></span><span style="background:#7a7770"></span></div>
+    </dd></div>
+    <div><dt>Reference</dt><dd>RIBA Journal feature; Knox Bhavan monograph.</dd></div>
+  </dl>
+</section>
+
+<!-- ============== 02 MODERNIST GROTESQUE ============== -->
+<section id="two" class="spec spec--grotesque">
+  <div class="spec__header">
+    <div class="mark">Coffey | Architects</div>
+    <nav class="spec__nav"><span>Work</span><span>Studio</span><span>Recognition</span><span>Contact</span></nav>
+    <span class="spec__num">02 — Modernist grotesque</span>
+  </div>
+
+  <h2 class="spec__hero">Houses, drawn around the way you live.</h2>
+
+  <p class="spec__lede">A small London studio, working with private clients on new houses, additions and refurbishments. We are interested in light, in time, and in how a home changes through a day and through a life.</p>
+
+  <figure class="spec__work">
+    <img src="images/webp/meadow-grove-living.webp" alt="Meadow Grove living room" loading="lazy">
+    <figcaption class="spec__caption">
+      <div class="meta">Meadow Grove — Barnes — 2021</div>
+      <h3>A garden room framed for morning light.</h3>
+      <p>Living and dining gathered around a long view of the lawn, with a low fireplace and oak floors that warm under the sun.</p>
+    </figcaption>
+  </figure>
+
+  <p class="award">Individual House Architect of the Year, BDOnline 2023.</p>
+
+  <dl class="spec__notes">
+    <div><dt>Headline</dt><dd>Inter SemiBold (or Söhne)</dd></div>
+    <div><dt>Body</dt><dd>PT Serif</dd></div>
+    <div><dt>Logo</dt><dd>PT Serif Caption italic</dd></div>
+    <div><dt>Palette</dt><dd>
+      <div class="swatches"><span style="background:#faf8f4"></span><span style="background:#2a2a2a"></span><span style="background:#9a9586"></span></div>
+    </dd></div>
+    <div><dt>Reference</dt><dd>Caruso St John publications; Chipperfield catalogues.</dd></div>
+  </dl>
+</section>
+
+<!-- ============== 03 STUDIO QUIET ============== -->
+<section id="three" class="spec spec--quiet">
+  <div class="spec__header">
+    <div class="mark">Coffey | Architects</div>
+    <nav class="spec__nav"><span>work</span><span>studio</span><span>recognition</span><span>contact</span></nav>
+    <span class="spec__num">03 — Studio quiet</span>
+  </div>
+
+  <h2 class="spec__hero">Houses for private clients, drawn around <em>the way you live</em>.</h2>
+
+  <p class="spec__lede">A small London studio. We work slowly, with care, on new houses, additions and refurbishments. We are interested in light, in time, and in how a home changes through a day and through a life.</p>
+
+  <ul class="works-list">
+    <li><span class="name">Meadow Grove</span><span class="where">Barnes</span><span class="year">2021</span></li>
+    <li><span class="name">Garden Lodge</span><span class="where">Harpenden</span><span class="year">2022</span></li>
+    <li><span class="name">Cove Ridge</span><span class="where">Devon</span><span class="year">2020</span></li>
+    <li><span class="name">Helios House</span><span class="where">White City</span><span class="year">2019</span></li>
+    <li><span class="name">Modern Mews</span><span class="where">Paddington</span><span class="year">2018</span></li>
+  </ul>
+
+  <p class="award"><em>Individual House Architect of the Year — BDOnline, 2023.</em></p>
+
+  <dl class="spec__notes">
+    <div><dt>Headline</dt><dd>PT Serif (with italic accent)</dd></div>
+    <div><dt>Body</dt><dd>PT Serif</dd></div>
+    <div><dt>Logo</dt><dd>PT Serif Caption italic</dd></div>
+    <div><dt>UI labels</dt><dd>PT Sans italic</dd></div>
+    <div><dt>Palette</dt><dd>
+      <div class="swatches"><span style="background:#f7f3ec"></span><span style="background:#1a1814"></span><span style="background:#7c3a32"></span></div>
+    </dd></div>
+    <div><dt>Reference</dt><dd>6a Architects; Witherford Watson Mann.</dd></div>
+  </dl>
+</section>
+
+<!-- ============== 04 ARCHITECTURAL MONO ============== -->
+<section id="four" class="spec spec--mono">
+  <div class="spec__header">
+    <div class="mark">Coffey | Architects</div>
+    <nav class="spec__nav"><span>/work</span><span>/studio</span><span>/recognition</span><span>/contact</span></nav>
+    <span class="spec__num">04 / architectural mono</span>
+  </div>
+
+  <h2 class="spec__hero">Houses, drawn around the way you live.</h2>
+
+  <p class="spec__lede">A small London studio, working with private clients on new houses, additions and refurbishments. Twenty years. Seventy-six homes. Ten RIBA Awards.</p>
+
+  <div class="works-mono">
+    <div class="row">
+      <span class="num">01</span>
+      <span class="name">Meadow Grove</span>
+      <span class="meta">Barnes / new build</span>
+      <span class="meta">2021</span>
+    </div>
+    <div class="row">
+      <span class="num">02</span>
+      <span class="name">Garden Lodge</span>
+      <span class="meta">Harpenden / refurb</span>
+      <span class="meta">2022</span>
+    </div>
+    <div class="row">
+      <span class="num">03</span>
+      <span class="name">Cove Ridge</span>
+      <span class="meta">Devon / new build</span>
+      <span class="meta">2020</span>
+    </div>
+    <div class="row">
+      <span class="num">04</span>
+      <span class="name">Helios House</span>
+      <span class="meta">White City / extension</span>
+      <span class="meta">2019</span>
+    </div>
+    <div class="row">
+      <span class="num">05</span>
+      <span class="name">Modern Mews</span>
+      <span class="meta">Paddington / refurb</span>
+      <span class="meta">2018</span>
+    </div>
+  </div>
+
+  <p class="award">→ Individual House Architect of the Year — BDOnline 2023</p>
+
+  <dl class="spec__notes">
+    <div><dt>Headline</dt><dd>PT Serif</dd></div>
+    <div><dt>Body</dt><dd>PT Serif</dd></div>
+    <div><dt>Logo</dt><dd>PT Serif Caption italic</dd></div>
+    <div><dt>Metadata</dt><dd>IBM Plex Mono Light</dd></div>
+    <div><dt>Palette</dt><dd>
+      <div class="swatches"><span style="background:#f6f3ec"></span><span style="background:#16140f"></span><span style="background:#a14e2a"></span></div>
+    </dd></div>
+    <div><dt>Reference</dt><dd>Architect's ledger; sketchbook indices.</dd></div>
+  </dl>
+</section>
+
+<!-- ============== 05 CINEMA OF LIGHT ============== -->
+<section id="five" class="spec spec--cinema">
+  <div class="spec__header">
+    <div class="mark">Coffey | Architects</div>
+    <nav class="spec__nav"><span>Work</span><span>Studio</span><span>Recognition</span><span>Contact</span></nav>
+    <span class="spec__num">05 — Cinema of light</span>
+  </div>
+
+  <h2 class="spec__hero">Houses, drawn around the way you live.</h2>
+
+  <p class="spec__lede">A small London studio. We are interested in light, in time, and in how a home changes through a day and through a life. The work is shown here as it is lived — at dawn, at dusk, in firelight.</p>
+
+  <figure class="spec__work">
+    <img src="images/webp/meadow-grove-living.webp" alt="Meadow Grove living room" loading="lazy">
+    <figcaption class="spec__caption">
+      <div class="meta">Meadow Grove · Barnes · 2021</div>
+      <h3>Morning Light</h3>
+      <p>Living and dining gathered around a long view of the lawn, with a low fireplace and oak floors that warm under the sun.</p>
+    </figcaption>
+  </figure>
+
+  <p class="award">Individual House Architect of the Year — BDOnline, 2023.</p>
+
+  <dl class="spec__notes">
+    <div><dt>Headline</dt><dd>Cormorant Garamond Light Italic</dd></div>
+    <div><dt>Subhead</dt><dd>Tenor Sans</dd></div>
+    <div><dt>Body</dt><dd>PT Serif</dd></div>
+    <div><dt>Logo</dt><dd>PT Serif Caption italic</dd></div>
+    <div><dt>Palette</dt><dd>
+      <div class="swatches"><span style="background:#16140f"></span><span style="background:#ebe4d6"></span><span style="background:#b08c3f"></span></div>
+    </dd></div>
+    <div><dt>Reference</dt><dd>Studio MK27; Vincent Van Duysen at night.</dd></div>
+  </dl>
+</section>
+
+<script>
+  // active state on side index
+  const links = document.querySelectorAll('#sideIndex a');
+  const sections = [...document.querySelectorAll('section.spec')];
+  const map = new Map();
+  sections.forEach((s, i) => map.set(s.id, links[i]));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('is-active'));
+        const link = map.get(e.target.id);
+        if (link) link.classList.add('is-active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+  sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
