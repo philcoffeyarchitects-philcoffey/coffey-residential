@@ -268,6 +268,11 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   position: absolute;
   inset: 0;
 }
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.10);
+}
 .hero__inner {
   position: absolute;
   inset: 0;
@@ -327,9 +332,28 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
     overflow: visible;
     background: transparent;
   }
+  /* Slightly taller image (4:3 instead of 3:2) gives the eyebrow,
+     wrapped 3-line H1 and 2-line sub-copy enough vertical room
+     to fit cleanly over the image without overflowing into the
+     page below — which on mobile would mean white text invisibly
+     overlaid on the page's cream background. */
+  .hero__media {
+    aspect-ratio: 4 / 3;
+  }
+  /* Darker overlay on mobile — the text-over-image needs more
+     contrast at this size, especially for the smaller sub-copy
+     against busy interior photography. */
+  .hero__overlay {
+    background: rgba(0, 0, 0, 0.30);
+  }
+  /* On mobile, skip the H2 "We design houses around light." and
+     go straight from the section eyebrow into the body copy. */
+  .about__lhs h2 {
+    display: none;
+  }
   .hero__inner {
     bottom: auto;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 4 / 3;
     padding: 20px 20px 18px;
     gap: 12px;
   }
