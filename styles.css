@@ -310,14 +310,26 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
 }
 
 @media (max-width: 700px) {
-  /* On phones, text sits OVER the image (eyebrow, H1, sub) and the
-     CTA drops below the image into normal flow. The 3:2 image just
-     fits the text block when CTA is excluded; the CTA gets its own
-     space underneath. */
-  .hero { overflow: visible; }
+  /* On phones, the eyebrow + H1 + sub-copy sit OVER the image, and
+     the CTA drops below the image into normal flow.
+     Two pieces are critical to make this work cleanly:
+       1. .hero must not have the dark fallback background, otherwise
+          the area below the image (around the in-flow CTA) shows as
+          a dark band. .hero__media keeps its own dark background as
+          a fallback for image-loading.
+       2. .hero__inner has inset:0 by default — which, once .hero is
+          taller than the image (because the CTA is now in-flow),
+          stretches the overlay box past the image and pushes the
+          bottom-justified H1+sub block below it. Constrain the
+          overlay to a 3:2 box pinned to the top so it tracks the
+          image exactly. */
+  .hero {
+    overflow: visible;
+    background: transparent;
+  }
   .hero__inner {
-    /* Stay absolute over the image, tighten padding so eyebrow +
-       2-line H1 + 2-line sub all fit comfortably. */
+    bottom: auto;
+    aspect-ratio: 3 / 2;
     padding: 20px 20px 18px;
     gap: 12px;
   }
@@ -327,8 +339,6 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   }
   .hero__sub { margin-top: 12px; }
   .hero__cta {
-    /* Drop out of the absolute overlay and sit in normal flow
-       below the image. */
     position: static;
     display: inline-flex;
     margin: 16px 20px 28px;
