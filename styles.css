@@ -140,7 +140,7 @@ button { font: inherit; cursor: pointer; }
   font-size: 13px;
   color: var(--fg);
 }
-.site-nav a { transition: opacity 200ms; }
+.site-nav a { transition: opacity 200ms; white-space: nowrap; }
 .site-nav a:hover { opacity: 0.55; }
 .site-nav a.is-active {
   text-decoration: underline;
@@ -186,9 +186,10 @@ body.nav-open .nav-toggle__bars span:nth-child(2) { opacity: 0; }
 body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
 
 /* Swap desktop nav for the hamburger drawer once the nav links start to
-   crowd the centered wordmark. 1100px gives "Awards & Press" + 5 other
-   items room to breathe between the brand-mark and "Coffey | Residential". */
-@media (max-width: 1100px) {
+   crowd the centered wordmark. With six links including "Awards & Press"
+   we need substantial breathing room — flipping at 1280px keeps the
+   layout calm before things start to wrap or rub against the wordmark. */
+@media (max-width: 1280px) {
   .nav-toggle { display: block; }
   /* Mobile drawer — full-bleed overlay below the header.
      Frosted glass: semi-transparent bone tint over a blurred backdrop

@@ -65,7 +65,11 @@
 //   - The direct children of every <section> on the page, which is the
 //     natural rhythm unit for these editorial layouts.
 
-(function () {
+// Deferred until the browser is idle so this work doesn't contribute to
+// Total Blocking Time on first load. The reveal-on-scroll setup queries
+// hundreds of DOM nodes; running it during idle keeps the main thread
+// free for first paint and user interaction.
+function _setupRevealOnScroll() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
 
@@ -164,4 +168,13 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
 
   targets.forEach(function (el) { io.observe(el); });
-})();
+}
+
+// Defer reveal-on-scroll setup to browser idle time so it doesn't
+// contribute to Total Blocking Time. Falls back to setTimeout on
+// browsers without requestIdleCallback (Safari).
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(_setupRevealOnScroll, { timeout: 1500 });
+} else {
+  setTimeout(_setupRevealOnScroll, 200);
+}
