@@ -244,11 +244,18 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
 }
 .hero__media {
   position: relative;
+  aspect-ratio: 3 / 2;     /* reserves space before the JS-set img loads */
+  background: var(--fg);   /* matches the dark overlay so any race state is invisible */
 }
 .hero__media img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;       /* fill the 3:2 box regardless of intrinsic ratio */
   display: block;
+}
+.hero__media .hero-fallback {
+  position: absolute;
+  inset: 0;
 }
 .hero__inner {
   position: absolute;
