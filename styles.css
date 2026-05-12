@@ -310,6 +310,28 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   .hero__sub { font-size: 14px; }
 }
 
+@media (max-width: 700px) {
+  /* On phones, the 3:2 hero image is too short to hold the eyebrow,
+     two-line H1, sub-copy and CTA without clipping. Move the text
+     OUT of the absolute overlay so it sits in its own block below
+     the image. The .hero element already has the dark background
+     colour, so the text panel reads as a continuous extension of
+     the image. Everything fits, nothing clips. */
+  .hero { overflow: visible; }
+  .hero__inner {
+    position: static;
+    inset: auto;
+    padding: 24px 20px 28px;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .hero__head {
+    font-size: 48px;
+    line-height: 0.98;
+  }
+  .hero__foot { margin-top: 0; }
+}
+
 /* ============= Sections (generic) ============= */
 .section {
   padding: var(--section) var(--gutter);
@@ -3990,7 +4012,19 @@ html { overflow-x: clip; }
   /* 4-cell strip layouts (studio facts, press stats, quick contacts,
      transport on contact page). Each collapses to a single column
      with horizontal-rule dividers between rows instead of vertical
-     borders between cells. */
+     borders between cells.
+     Also inset the strips from the screen edge — .press-stats,
+     .quick-contacts and .transport are full-bleed on desktop (a
+     deliberate design choice when they sit as one continuous strip),
+     but at single-column phone width that has the cell contents
+     pressed against the viewport edge. Match the rest of the page's
+     20px mobile gutter. */
+  .press-stats,
+  .quick-contacts,
+  .transport {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .studio-facts__grid,
   .press-stats,
   .quick-contacts,
