@@ -15,9 +15,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Coffey | Residential — New houses, and houses made new.</title>
 <meta name="description" content="A London architecture studio designing new family houses and the whole-house refurbishments that bring older ones back to life. Founded by Phil Coffey in 2005." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif+Caption:ital@0;1&family=Work+Sans:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="styles.css">
 <!-- seo:canonical+jsonld start -->
 <link rel="canonical" href="https://coffeyresidential.com/" />
@@ -60,7 +58,7 @@
 <!-- ===== Header ===== -->
 <header class="site-header">
   <div class="brand">
-    <img class="brand-mark" src="images/webp/logo.webp" alt="" />
+    <img src="images/webp/logo.webp" alt="" class="brand-mark" width="212" height="212">
     <span class="eyebrow">London &nbsp;&middot;&nbsp; Est. 2005</span>
   </div>
   <a class="wordmark" href="index.html">Coffey<span class="pipe">|</span>Residential</a>
@@ -76,14 +74,14 @@
 
 <!-- ===== Hero =====
      The hero image is picked at random from a pool baked into the inline
-     <script> below by refresh-hero-images.ps1. The <img> starts with no
-     src so the browser doesnt prefetch a default; the inline script sets
+     <script> below by refresh-hero-images.ps1. The image element starts
+     with no src so the browser doesnt prefetch a default; the inline script sets
      src/alt synchronously during HTML parse, so first paint shows the
      chosen image (no double-fetch, no flash). The <noscript> fallback
      handles the rare visitor without JavaScript. -->
 <section class="hero">
   <div class="hero__media">
-    <img id="hero-img" alt="" />
+    <img alt="" id="hero-img" fetchpriority="high" decoding="async">
     <script>
       // <!-- hero-picker:start -->
       (function () {
@@ -112,7 +110,7 @@
       // <!-- hero-picker:end -->
     </script>
     <noscript>
-      <img class="hero-fallback" src="images/webp/HomePage%20Images/cove-ridge-roofline-and-quarry.webp" alt="Cove Ridge, Devon &mdash; roofline against the reclaimed quarry">
+      <img src="images/webp/HomePage%20Images/cove-ridge-roofline-and-quarry.webp" alt="Cove Ridge, Devon &mdash; roofline against the reclaimed quarry" class="hero-fallback" width="1200" height="800" loading="lazy" decoding="async">
     </noscript>
     <div style="position:absolute;inset:0;background:rgba(0,0,0,.22)"></div>
   </div>
@@ -159,7 +157,7 @@
 
     <a class="project-row" href="meadow-grove-barnes.html">
       <div class="pr-image">
-        <img src="images/webp/Selected%20Home%20Homes/meadow-grove-living-side-view.webp" alt="Meadow Grove, Barnes, SW13 &mdash; Living side view" loading="lazy">
+        <img src="images/webp/Selected%20Home%20Homes/meadow-grove-living-side-view.webp" alt="Meadow Grove, Barnes, SW13 &mdash; Living side view" width="800" height="533" loading="lazy" decoding="async">
       </div>
       <div class="pr-content">
         <div>
@@ -177,7 +175,7 @@
 
     <a class="project-row" href="garden-lodge-harpenden.html">
       <div class="pr-image">
-        <img src="images/webp/Selected%20Home%20Homes/garden-lodge-living-space-and-fire.webp" alt="Garden Lodge, Harpenden, AL5 &mdash; Living space and fire" loading="lazy">
+        <img src="images/webp/Selected%20Home%20Homes/garden-lodge-living-space-and-fire.webp" alt="Garden Lodge, Harpenden, AL5 &mdash; Living space and fire" width="800" height="534" loading="lazy" decoding="async">
       </div>
       <div class="pr-content">
         <div>
@@ -195,7 +193,7 @@
 
     <a class="project-row" href="cove-ridge-devon.html">
       <div class="pr-image">
-        <img src="images/webp/Selected%20Home%20Homes/cove-ridge-view-at-sunset.webp" alt="Cove Ridge, North Devon coast &mdash; View at sunset" loading="lazy">
+        <img src="images/webp/Selected%20Home%20Homes/cove-ridge-view-at-sunset.webp" alt="Cove Ridge, North Devon coast &mdash; View at sunset" width="800" height="600" loading="lazy" decoding="async">
       </div>
       <div class="pr-content">
         <div>
@@ -213,7 +211,7 @@
 
     <a class="project-row" href="modern-barn-devon.html">
       <div class="pr-image">
-        <img src="images/webp/Selected%20Home%20Homes/modern-barn-aerial-view.webp" alt="Modern Barn, Dorset, Jurassic Coast &mdash; Aerial view over Lyme Regis" loading="lazy">
+        <img src="images/webp/Selected%20Home%20Homes/modern-barn-aerial-view.webp" alt="Modern Barn, Dorset, Jurassic Coast &mdash; Aerial view over Lyme Regis" width="800" height="600" loading="lazy" decoding="async">
       </div>
       <div class="pr-content">
         <div>
@@ -231,7 +229,7 @@
 
     <a class="project-row" href="modern-detached-harpenden.html">
       <div class="pr-image">
-        <img src="images/webp/Selected%20Home%20Homes/modern-detached-external-back-with-people.webp" alt="Modern Detached, Harpenden, AL5 &mdash; Back elevation with family" loading="lazy">
+        <img src="images/webp/Selected%20Home%20Homes/modern-detached-external-back-with-people.webp" alt="Modern Detached, Harpenden, AL5 &mdash; Back elevation with family" width="800" height="599" loading="lazy" decoding="async">
       </div>
       <div class="pr-content">
         <div>
@@ -249,7 +247,7 @@
 
     <a class="project-row" href="helios-house-white-city.html">
       <div class="pr-image">
-        <img src="images/webp/Selected%20Home%20Homes/helios-house-kitchen-and-screen.webp" alt="Helios House, White City, W12 &mdash; Brass screen and marble kitchen" loading="lazy">
+        <img src="images/webp/Selected%20Home%20Homes/helios-house-kitchen-and-screen.webp" alt="Helios House, White City, W12 &mdash; Brass screen and marble kitchen" width="800" height="640" loading="lazy" decoding="async">
       </div>
       <div class="pr-content">
         <div>
@@ -400,7 +398,7 @@
 
     <a class="journal-card" href="journal/the-corner-of-the-room.html">
       <div class="journal-card__image">
-        <img src="journal/img/shelf-in-plaster.webp" alt="A travertine shelf set into a hand-trowelled plaster wall" loading="lazy">
+        <img src="journal/img/shelf-in-plaster.webp" alt="A travertine shelf set into a hand-trowelled plaster wall" width="2528" height="1696" loading="lazy" decoding="async">
       </div>
       <div class="journal-card__meta"><span>Essay</span><span>May 2026 &middot; 4 min</span></div>
       <div class="journal-card__title">The corner of the room.</div>
@@ -409,7 +407,7 @@
 
     <a class="journal-card" href="journal/the-pile-on-the-table.html">
       <div class="journal-card__image">
-        <img src="journal/img/material-samples.webp" alt="A small pile of material samples on a studio table" loading="lazy">
+        <img src="journal/img/material-samples.webp" alt="A small pile of material samples on a studio table" width="2528" height="1696" loading="lazy" decoding="async">
       </div>
       <div class="journal-card__meta"><span>Process</span><span>Apr 2026 &middot; 4 min</span></div>
       <div class="journal-card__title">The pile on the table.</div>
@@ -418,7 +416,7 @@
 
     <a class="journal-card" href="journal/houses-outlast-watches.html">
       <div class="journal-card__image">
-        <img src="journal/img/watch-on-stone.webp" alt="A simple mechanical wristwatch on a travertine surface" loading="lazy">
+        <img src="journal/img/watch-on-stone.webp" alt="A simple mechanical wristwatch on a travertine surface" width="2528" height="1696" loading="lazy" decoding="async">
       </div>
       <div class="journal-card__meta"><span>Essay</span><span>Jan 2026 &middot; 5 min</span></div>
       <div class="journal-card__title">Houses outlast watches.</div>
