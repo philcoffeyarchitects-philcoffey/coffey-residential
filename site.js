@@ -74,7 +74,9 @@ function _setupRevealOnScroll() {
   if (!('IntersectionObserver' in window)) return;
 
   // Sections that are already on screen at first paint, so revealing them
-  // would just make them flicker in.
+  // would just make them flicker in — plus image-heavy sections where an
+  // opacity:0 wrapper would hide images if the IntersectionObserver fired
+  // late or unreliably (gallery, next-prev tiles, read-next cards).
   var skipParentSelectors = [
     '.hero',
     '.studio-hero',
@@ -84,7 +86,11 @@ function _setupRevealOnScroll() {
     '.cta-panel',
     '.cta',
     'footer',
-    '.site-header'
+    '.site-header',
+    '.gallery',
+    '.next-prev',
+    '.read-next',
+    '.materials'
   ].join(',');
 
   // Elements that already manage their own reveal — don't double-animate.
@@ -168,6 +174,19 @@ function _setupRevealOnScroll() {
   }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
 
   targets.forEach(function (el) { io.observe(el); });
+
+  // Safety net: if for any reason the IntersectionObserver doesn't fire
+  // (long page, low-power device, scroll position mid-page at load, etc.)
+  // force any still-hidden elements visible after 4 seconds. Better an
+  // un-animated reveal than permanently invisible content.
+  setTimeout(function () {
+    targets.forEach(function (el) {
+      if (!el.classList.contains('is-in')) {
+        el.classList.add('is-in');
+        io.unobserve(el);
+      }
+    });
+  }, 4000);
 }
 
 // Defer reveal-on-scroll setup to browser idle time so it doesn't
