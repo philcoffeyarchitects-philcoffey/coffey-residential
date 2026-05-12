@@ -71,22 +71,45 @@ $json = $entries | ConvertTo-Json -Depth 5
 Write-Host ""
 Write-Host "Wrote: $manifest"
 
-# Also update the static default <img> in index.html so the page is
-# correct without JavaScript / before manifest.json loads. The script
-# tag with the hero rotator will swap it on the client.
-$defaultSrc = "$heroUrlPath/$([uri]::EscapeDataString($files[0]))"
-$defaultAlt = Make-Alt $files[0]
+# Also bake the heroes list into the inline <script> in index.html so the
+# random pick happens synchronously during HTML parse (no manifest fetch,
+# no flash of the default image, no duplicate download).
+$jsLines = ($entries | ForEach-Object {
+    '          { src: ''' + $_.src + ''', alt: ''' + ($_.alt -replace "'", "\'") + ''' }'
+}) -join ",`r`n"
+
+$newBlock = @"
+// <!-- hero-picker:start -->
+      (function () {
+        var heroes = [
+$jsLines
+        ];
+        var pick = heroes[Math.floor(Math.random() * heroes.length)];
+        var img = document.getElementById('hero-img');
+        if (img && pick) {
+          img.src = pick.src;
+          if (pick.alt) img.alt = pick.alt;
+        }
+      })();
+      // <!-- hero-picker:end -->
+"@
 
 $html = [System.IO.File]::ReadAllText($indexHtml, $utf8)
-$pattern = '(<img\s+id="hero-img"\s+src=")[^"]*("\s+alt=")[^"]*(")'
-$replacement = "`${1}$defaultSrc`${2}$defaultAlt`${3}"
-$newHtml = [regex]::Replace($html, $pattern, $replacement, 'IgnoreCase')
+$rxBlock = [regex]::new(
+    '//\s*<!--\s*hero-picker:start\s*-->.*?//\s*<!--\s*hero-picker:end\s*-->',
+    'Singleline'
+)
+if ($rxBlock.IsMatch($html)) {
+    $newHtml = $rxBlock.Replace($html, { param($m) $newBlock }, 1)
+} else {
+    $newHtml = $html
+}
 
 if ($newHtml -ne $html) {
     [System.IO.File]::WriteAllText($indexHtml, $newHtml, $utf8)
-    Write-Host "Updated index.html default hero src -> $defaultSrc"
+    Write-Host "Updated index.html inline hero pool ($($entries.Count) candidates)"
 } else {
-    Write-Host "index.html default hero src already up to date"
+    Write-Host "index.html inline hero pool already up to date"
 }
 
 Write-Host ""

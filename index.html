@@ -75,12 +75,45 @@
 </header>
 
 <!-- ===== Hero =====
-     A landscape image is picked at random from a 10-image pool on each
-     page load.  The default src below is the first option, so the page
-     looks right with JS disabled (and avoids a "no image" flash). -->
+     The hero image is picked at random from a pool baked into the inline
+     <script> below by refresh-hero-images.ps1. The <img> starts with no
+     src so the browser doesnt prefetch a default; the inline script sets
+     src/alt synchronously during HTML parse, so first paint shows the
+     chosen image (no double-fetch, no flash). The <noscript> fallback
+     handles the rare visitor without JavaScript. -->
 <section class="hero">
   <div class="hero__media">
-    <img id="hero-img" src="images/webp/HomePage%20Images/2023_Folded%2BHouse%2B%25284%2529.webp" alt="2023 Folded+House+%284%29" />
+    <img id="hero-img" alt="" />
+    <script>
+      // <!-- hero-picker:start -->
+      (function () {
+        var heroes = [
+          { src: 'images/webp/HomePage%20Images/cove-ridge-entrance-at-dusk.webp', alt: 'Cove ridge entrance at dusk' },
+          { src: 'images/webp/HomePage%20Images/cove-ridge-roofline-and-quarry.webp', alt: 'Cove ridge roofline and quarry' },
+          { src: 'images/webp/HomePage%20Images/cove-ridge-view-at-sunset.webp', alt: 'Cove ridge view at sunset' },
+          { src: 'images/webp/HomePage%20Images/folded-house-ocular-window.webp', alt: 'Folded house ocular window' },
+          { src: 'images/webp/HomePage%20Images/garden-lodge-fire-and-chimney.webp', alt: 'Garden lodge fire and chimney' },
+          { src: 'images/webp/HomePage%20Images/garden-lodge-living-space-and-fire.webp', alt: 'Garden lodge living space and fire' },
+          { src: 'images/webp/HomePage%20Images/helios-house-living.webp', alt: 'Helios house living' },
+          { src: 'images/webp/HomePage%20Images/hidden-house-garden.webp', alt: 'Hidden house garden' },
+          { src: 'images/webp/HomePage%20Images/meadow-grove-counter-and-hob.webp', alt: 'Meadow grove counter and hob' },
+          { src: 'images/webp/HomePage%20Images/meadow-grove-dining-area.webp', alt: 'Meadow grove dining area' },
+          { src: 'images/webp/HomePage%20Images/modern-barn-dusk-rear-window.webp', alt: 'Modern barn dusk rear window' },
+          { src: 'images/webp/HomePage%20Images/modern-barn-rear-view-reflection.webp', alt: 'Modern barn rear view reflection' },
+          { src: 'images/webp/HomePage%20Images/modern-detached-external-back-with-people.webp', alt: 'Modern detached external back with people' }
+        ];
+        var pick = heroes[Math.floor(Math.random() * heroes.length)];
+        var img = document.getElementById('hero-img');
+        if (img && pick) {
+          img.src = pick.src;
+          if (pick.alt) img.alt = pick.alt;
+        }
+      })();
+      // <!-- hero-picker:end -->
+    </script>
+    <noscript>
+      <img class="hero-fallback" src="images/webp/HomePage%20Images/cove-ridge-roofline-and-quarry.webp" alt="Cove Ridge, Devon &mdash; roofline against the reclaimed quarry">
+    </noscript>
     <div style="position:absolute;inset:0;background:rgba(0,0,0,.22)"></div>
   </div>
   <div class="hero__inner">
@@ -367,7 +400,7 @@
 
     <a class="journal-card" href="journal/the-corner-of-the-room.html">
       <div class="journal-card__image">
-        <img src="journal/img/shelf-in-plaster.png" alt="A travertine shelf set into a hand-trowelled plaster wall" loading="lazy">
+        <img src="journal/img/shelf-in-plaster.webp" alt="A travertine shelf set into a hand-trowelled plaster wall" loading="lazy">
       </div>
       <div class="journal-card__meta"><span>Essay</span><span>May 2026 &middot; 4 min</span></div>
       <div class="journal-card__title">The corner of the room.</div>
@@ -376,7 +409,7 @@
 
     <a class="journal-card" href="journal/the-pile-on-the-table.html">
       <div class="journal-card__image">
-        <img src="journal/img/material-samples.png" alt="A small pile of material samples on a studio table" loading="lazy">
+        <img src="journal/img/material-samples.webp" alt="A small pile of material samples on a studio table" loading="lazy">
       </div>
       <div class="journal-card__meta"><span>Process</span><span>Apr 2026 &middot; 4 min</span></div>
       <div class="journal-card__title">The pile on the table.</div>
@@ -385,7 +418,7 @@
 
     <a class="journal-card" href="journal/houses-outlast-watches.html">
       <div class="journal-card__image">
-        <img src="journal/img/watch-on-stone.png" alt="A simple mechanical wristwatch on a travertine surface" loading="lazy">
+        <img src="journal/img/watch-on-stone.webp" alt="A simple mechanical wristwatch on a travertine surface" loading="lazy">
       </div>
       <div class="journal-card__meta"><span>Essay</span><span>Jan 2026 &middot; 5 min</span></div>
       <div class="journal-card__title">Houses outlast watches.</div>
@@ -416,29 +449,6 @@
 </footer>
 
 </div><!-- /.shell -->
-
-<script>
-  // Random homepage hero — picks one image from whatever sits in
-  // images/webp/homepage/. The folder contents are listed in
-  // manifest.json, which is regenerated by refresh-hero-images.ps1
-  // whenever Phil adds or removes images. Filenames don't matter.
-  // If JS or the fetch fails, the default <img src> in the HTML stands.
-  (() => {
-    const heroImg = document.getElementById('hero-img');
-    if (!heroImg) return;
-    fetch('images/webp/HomePage%20Images/manifest.json', { cache: 'no-cache' })
-      .then(r => r.ok ? r.json() : null)
-      .then(list => {
-        if (!Array.isArray(list) || list.length === 0) return;
-        const pick = list[Math.floor(Math.random() * list.length)];
-        if (pick && pick.src && pick.src !== heroImg.getAttribute('src')) {
-          heroImg.src = pick.src;
-          if (pick.alt) heroImg.alt = pick.alt;
-        }
-      })
-      .catch(() => { /* keep the default hero from the HTML */ });
-  })();
-</script>
 
   <script src="site.js" defer></script>
 </body>
