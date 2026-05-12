@@ -1128,7 +1128,18 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   .gallery__grid { column-count: 2; }
 }
 @media (max-width: 700px) {
-  .gallery__grid { column-count: 1; }
+  /* Drop CSS multi-column on mobile. Single-column masonry isn't masonry —
+     it's just a stack — and the column-count + loading="lazy" combination
+     has a known bug on iOS Safari where figures collapse to zero height
+     before image dimensions are known, so the IntersectionObserver never
+     fires and images never render inline. Plain block flow avoids it. */
+  .gallery__grid {
+    column-count: unset;
+    display: block;
+  }
+  .gallery__grid > * {
+    margin: 0 0 8px 0;
+  }
   .g-quote { padding: 64px 0; }
   .g-quote p { font-size: 24px; }
 }
