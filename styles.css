@@ -306,6 +306,9 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   bottom: 56px;
   z-index: 3;
 }
+/* Duplicate "Get in touch" button placed inside the About section
+   on mobile only — desktop keeps the hero corner CTA. */
+.about__cta { display: none; }
 
 @media (max-width: 800px) {
   .hero__inner { padding: 32px 24px; }
@@ -362,10 +365,17 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
     line-height: 0.98;
   }
   .hero__sub { margin-top: 12px; }
-  .hero__cta {
-    position: static;
+  /* Hide the hero corner CTA on mobile — replaced by .about__cta
+     below the "More about the studio" link inside the About section. */
+  .hero__cta { display: none; }
+  /* Tighten top of About section so its eyebrow sits closer to
+     the bottom of the hero image. */
+  .about { padding-top: 28px; }
+  /* Show the duplicate CTA inside .about__rhs (hidden by default
+     on desktop, where the hero corner CTA is the one in use). */
+  .about__cta {
     display: inline-flex;
-    margin: 16px 20px 28px;
+    margin-top: 24px;
   }
 }
 
