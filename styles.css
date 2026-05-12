@@ -511,6 +511,16 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   display: block;
   transition: filter 300ms;
 }
+/* Portrait variant — for projects that only have portrait gallery
+   shots (Arch Study, Apartment Block, Modern Side Extension, Well
+   House). Lets the image show in its natural aspect rather than
+   being cropped into a landscape slot. */
+.project-row .pr-image--portrait {
+  aspect-ratio: auto;
+}
+.project-row .pr-image--portrait img {
+  height: auto;
+}
 .project-row:hover .pr-image img { filter: brightness(0.78); }
 
 .project-row .pr-content {
