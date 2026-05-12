@@ -59,6 +59,9 @@ button { font: inherit; cursor: pointer; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
+  margin: 0;                  /* neutralise <h2> user-agent margins
+                                 (eyebrow may be a <div> or <h2>) */
+  display: block;
 }
 .eyebrow--light { color: rgba(255,255,255,.75); }
 
@@ -3950,4 +3953,116 @@ a.quick-contacts__cell .v,
   .lightbox__prev  { left: 12px; }
   .lightbox__next  { right: 12px; }
   .lightbox__img   { max-height: 76vh; }
+}
+
+/* ==========================================================
+   MOBILE FIT-UP
+   Final pass for ≤600px viewports. Earlier breakpoints at 1000/
+   900/800 px leave tabular row layouts with fixed-width left
+   columns squeezed at phone sizes; this section collapses them
+   to single-column flows so labels stack above their content.
+   Also includes a safety net against accidental horizontal scroll
+   (overflow-x: clip, which — unlike `hidden` — does not break
+   position: sticky on .site-header and the contact form's lhs).
+   ========================================================== */
+
+html { overflow-x: clip; }
+
+@media (max-width: 600px) {
+  /* Project-page rows — labels stack above content. */
+  .materials__row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 14px 0;
+  }
+  .project-press__row {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 4px 12px;
+    padding: 16px 0;
+  }
+  .project-press__row .src  { grid-column: 1;     grid-row: 1; }
+  .project-press__row .yr   { grid-column: 2;     grid-row: 1; text-align: right; }
+  .project-press__row .line { grid-column: 1 / -1; grid-row: 2; }
+}
+
+@media (max-width: 540px) {
+  /* 4-cell strip layouts (studio facts, press stats, quick contacts,
+     transport on contact page). Each collapses to a single column
+     with horizontal-rule dividers between rows instead of vertical
+     borders between cells. */
+  .studio-facts__grid,
+  .press-stats,
+  .quick-contacts,
+  .transport {
+    grid-template-columns: 1fr;
+  }
+  .studio-facts__cell,
+  .press-stats__cell,
+  .quick-contacts__cell,
+  .transport__cell {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+  }
+  .studio-facts__cell:last-child,
+  .press-stats__cell:last-child,
+  .quick-contacts__cell:last-child,
+  .transport__cell:last-child {
+    border-bottom: 0;
+  }
+
+  /* Journal article breadcrumb strip — allow wrap so long titles
+     don't push the "X min read" off the right edge. */
+  .article-meta-strip {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+  .article-meta-strip .sep { margin: 0 6px; }
+}
+
+@media (max-width: 500px) {
+  /* Awards row — fully stack year/status on top, body and title beneath. */
+  .awards-row {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 4px 12px;
+    padding: 18px 0;
+  }
+  .awards-row .yr          { grid-column: 1;     grid-row: 1; font-size: 11px; }
+  .awards-row .status-wrap { grid-column: 2;     grid-row: 1; text-align: right; }
+  .awards-row .body        { grid-column: 1 / -1; grid-row: 2; font-size: 16px; }
+  .awards-row .title       { grid-column: 1 / -1; grid-row: 3; font-size: 14px; }
+  .awards-row .cat         { display: none; }
+
+  /* Press row — title row above project, kind chip below */
+  .press-row {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+  .press-row .src  { font-size: 16px; }
+  .press-row .kind { grid-column: 1; grid-row: auto; justify-self: start; }
+  .press-row .proj { grid-column: 1; }
+
+  /* Timeline — drop the 2-col masonry; one stage per row */
+  .timeline__grid { grid-template-columns: 1fr; }
+  .timeline__stage:nth-child(2n) { border-right: 1px solid var(--line); }
+  .timeline__stage:last-child    { border-bottom: 1px solid var(--line); }
+
+  /* FAQ — drop the q-no column; question gets full width */
+  .faq-row__grid { grid-template-columns: 1fr; gap: 8px; }
+  .faq-row .q-no { display: none; }
+
+  /* Generic section padding tightens 4 px so content keeps clear of
+     the screen edge without feeling cramped. */
+  .section { padding-left: 20px; padding-right: 20px; }
+  .section-head h2 { font-size: 32px; }
+}
+
+@media (max-width: 420px) {
+  /* Last-mile tightening for very small phones (iPhone SE / 360-wide
+     Androids). Wordmark and brand-mark in the header can crowd the
+     hamburger — let it shrink. */
+  .wordmark { font-size: 15px; }
+  .hero__head { font-size: 44px; }
 }
