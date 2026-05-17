@@ -584,15 +584,48 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
 
 @media (max-width: 900px) {
   .project-row { grid-template-columns: 1fr; }
-  .project-row .pr-content { padding: 40px 24px; max-width: none; }
-  .project-row .pr-title { font-size: 28px; }
-  /* Force every tile to read text-on-top, image-below on mobile.
-     Selectors match the desktop alternation rules' specificity so they
-     win the cascade — otherwise even rows keep flipping image-on-top. */
-  .projects__rows .project-row:nth-child(odd)  .pr-content,
-  .projects__rows .project-row:nth-child(even) .pr-content { order: 1; }
+  /* Reorder homepage "Recent work" tiles on mobile so each reads:
+       eyebrow / title / IMAGE / loc / body / foot.
+     Same pattern as the /homes index page — flatten .pr-content
+     (and its unnamed inner wrapper) via cascading `display: contents`
+     so each leaf element becomes a direct grid item of .project-row,
+     then place each into a specific grid row. Horizontal gutter
+     padding moves from .pr-content to each text child since
+     .pr-content is no longer rendering a box. */
+  .projects__rows .project-row {
+    grid-template-rows: auto auto auto auto auto auto;
+  }
+  .projects__rows .project-row .pr-content,
+  .projects__rows .project-row .pr-content > div:first-child {
+    display: contents;
+  }
+  .projects__rows .project-row .pr-eyebrow,
+  .projects__rows .project-row .pr-title,
+  .projects__rows .project-row .pr-loc,
+  .projects__rows .project-row .pr-body,
+  .projects__rows .project-row .pr-foot {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .projects__rows .project-row .pr-eyebrow {
+    grid-row: 1;
+    padding-top: 40px;
+    margin-bottom: 12px;
+  }
+  .projects__rows .project-row .pr-title {
+    grid-row: 2;
+    font-size: 28px;
+    margin: 0;
+  }
+  .projects__rows .project-row .pr-image,
   .projects__rows .project-row:nth-child(odd)  .pr-image,
-  .projects__rows .project-row:nth-child(even) .pr-image   { order: 2; }
+  .projects__rows .project-row:nth-child(even) .pr-image {
+    grid-row: 3;
+    margin-top: 24px;
+  }
+  .projects__rows .project-row .pr-loc  { grid-row: 4; margin-top: 24px; }
+  .projects__rows .project-row .pr-body { grid-row: 5; margin-top: 16px; }
+  .projects__rows .project-row .pr-foot { grid-row: 6; margin-top: 32px; padding-bottom: 40px; }
   .projects > .section-head { padding: 64px 24px 32px; }
 }
 
