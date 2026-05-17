@@ -5,7 +5,7 @@
   "board_image_clean": "materials-board_clean.jpg",
   "ground": "warm-white painted timber",
   "generated": "2026-05-17",
-  "numbering_pass": "complete",
+  "numbering_pass": "pending",
   "materials": [
     {
       "id": 1,
@@ -15,42 +15,48 @@
     },
     {
       "id": 2,
+      "name": "Polished verde alpi green marble",
+      "use": "Bar counter top, lower-ground living suite",
+      "category": "Stone"
+    },
+    {
+      "id": 3,
       "name": "Honed dark charcoal stone worktop",
       "use": "Kitchen worktop",
       "category": "Stone"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Pale polished concrete floor",
       "use": "Lower-ground living suite",
       "category": "Stone"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Aged brass",
       "use": "Handrail and stair detailing",
       "category": "Metal"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Matt-black painted joinery",
       "use": "Dramatic full-height stair-wall finish",
       "category": "Other"
     },
     {
-      "id": 6,
+      "id": 7,
       "name": "Frameless clear float glass",
       "use": "Stair balustrade",
       "category": "Glass"
     },
     {
-      "id": 7,
+      "id": 8,
       "name": "Warm walnut veneer",
       "use": "Niche-shelving timber",
       "category": "Timber"
     },
     {
-      "id": 8,
+      "id": 9,
       "name": "Pale ash plank floor",
       "use": "Dominant interior timber",
       "category": "Timber"
