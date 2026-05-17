@@ -1,0 +1,59 @@
+{
+  "project_slug": "modern-terrace-islington",
+  "project_name": "Modern Terrace, Islington",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Board-marked cast concrete",
+      "use": "Signature wall finish",
+      "category": "Stone"
+    },
+    {
+      "id": 2,
+      "name": "Yellow London stock brick (fire-blackened)",
+      "use": "Retained party-wall fabric",
+      "category": "Other"
+    },
+    {
+      "id": 3,
+      "name": "Laminated clear glass stair tread",
+      "use": "Signature glass stair",
+      "category": "Glass"
+    },
+    {
+      "id": 4,
+      "name": "Matte black powder-coated steel",
+      "use": "Stair carriage and balustrade",
+      "category": "Metal"
+    },
+    {
+      "id": 5,
+      "name": "Pale polished concrete floor",
+      "use": "Open-plan flooring",
+      "category": "Stone"
+    },
+    {
+      "id": 6,
+      "name": "Pale natural European oak",
+      "use": "Worktop and bath surround",
+      "category": "Timber"
+    },
+    {
+      "id": 7,
+      "name": "White matt-lacquered MDF",
+      "use": "Kitchen joinery",
+      "category": "Other"
+    },
+    {
+      "id": 8,
+      "name": "Fine-grain white mosaic glass tile",
+      "use": "Bathroom tile",
+      "category": "Tile"
+    }
+  ]
+}

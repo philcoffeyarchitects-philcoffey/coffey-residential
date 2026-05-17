@@ -1,0 +1,151 @@
+{
+  "workspace": "private (Ultra plan)",
+  "starting_credits": 1715.88,
+  "ad_1_chosen_variant": "with-text-v1 (job 9e965cdf-1011-46b3-9dca-ecfca038ffc1)",
+  "ad_1": {
+    "model": "nano_banana_2 (Nano Banana Pro)",
+    "source_media_id": "a2d54ea7-7165-4d38-88c6-7b12fb9af4c1",
+    "source_file": "cove-ridge-structure.jpg",
+    "aspect_ratio": "4:5",
+    "resolution": "2k (1856 x 2304)",
+    "jobs": [
+      {
+        "job_id": "9e965cdf-1011-46b3-9dca-ecfca038ffc1",
+        "variant": "with-text-v1",
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_073453_9e965cdf-1011-46b3-9dca-ecfca038ffc1.png",
+        "save_as": "ad-1-the-award_with-text-v1.png"
+      },
+      {
+        "job_id": "f58294ca-cfe9-490b-95bc-b1c7bac4b8ee",
+        "variant": "with-text-v2",
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_073453_f58294ca-cfe9-490b-95bc-b1c7bac4b8ee.png",
+        "save_as": "ad-1-the-award_with-text-v2.png"
+      },
+      {
+        "job_id": "0f882977-420a-4daa-bed7-4a6487be8c3d",
+        "variant": "clean",
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_073456_0f882977-420a-4daa-bed7-4a6487be8c3d.png",
+        "save_as": "ad-1-the-award_clean.png"
+      }
+    ]
+  },
+  "ad_3": {
+    "model": "nano_banana_2 (Nano Banana Pro)",
+    "aspect_ratio": "4:5",
+    "resolution": "2k (1856 x 2304)",
+    "slides": [
+      {
+        "slide": 1,
+        "job_id": "9f88da32-385f-4c10-bd05-0a5b1b4d10c2",
+        "source_file": "meadow-grove-living-from-hallaway.jpg",
+        "source_media_id": "8e09cb3c-dcbb-4761-b06b-3b3639dd8150",
+        "text": "How a room reads at half past four in February.",
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_083624_9f88da32-385f-4c10-bd05-0a5b1b4d10c2.png",
+        "save_as": "ad-3-the-quiet-question_slide-01.png"
+      },
+      {
+        "slide": 2,
+        "job_id": "15d1333c-893c-49d8-a32c-816da4b18be5",
+        "source_file": "meadow-grove-staris-light-from-top.jpg",
+        "source_media_id": "58d95900-d201-4728-960d-236e0826c20c",
+        "text": "How a stair takes the morning.",
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_083629_15d1333c-893c-49d8-a32c-816da4b18be5.png",
+        "save_as": "ad-3-the-quiet-question_slide-02.png"
+      },
+      {
+        "slide": 3,
+        "job_id": "24b314aa-28de-4ab6-8c50-373e3f65f0fd",
+        "source_file": "hidden-house-living-view.jpg",
+        "source_media_id": "7c9c3046-08af-4f42-a30b-cf4598975d09",
+        "text": "What a house feels like in five years, and in fifty.",
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_083633_24b314aa-28de-4ab6-8c50-373e3f65f0fd.png",
+        "save_as": "ad-3-the-quiet-question_slide-03.png"
+      },
+      {
+        "slide": 4,
+        "job_id": "d7b8fcbf-47a9-4ce5-b484-c15116a432e6",
+        "source_file": "(generated near-black plate, no reference)",
+        "text": "Coffey Residential. London, since 2005.",
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_083638_d7b8fcbf-47a9-4ce5-b484-c15116a432e6.png",
+        "save_as": "ad-3-the-quiet-question_slide-04.png"
+      }
+    ]
+  },
+  "ad_5": {
+    "model": "seedance_2_0 (clips) + nano_banana_2 (title card)",
+    "aspect_ratio": "9:16",
+    "resolution": "1080p (1080 x 1920)",
+    "segments": [
+      {
+        "shot": 1,
+        "job_id": "e5ae6901-8009-4b73-a232-5f65028f29ec",
+        "source_file": "cove-ridge-sunlight-abstract.jpg",
+        "description": "light moving across plaster",
+        "duration_s": 4,
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_085438_e5ae6901-8009-4b73-a232-5f65028f29ec.mp4",
+        "save_as": "ad-5-the-morning_shot-1-plaster.mp4"
+      },
+      {
+        "shot": 2,
+        "job_id": "d8e2503e-7261-4e85-ab0f-29b8e0301262",
+        "source_file": "meadow-grove-banister-detail.jpg",
+        "description": "slow drift along banister",
+        "duration_s": 4,
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_085529_d8e2503e-7261-4e85-ab0f-29b8e0301262.mp4",
+        "save_as": "ad-5-the-morning_shot-2-banister.mp4"
+      },
+      {
+        "shot": 3,
+        "job_id": "f1316c4f-7833-4af0-90e3-c1a9699ef06c",
+        "source_file": "arch-study-doors-to-courtyard.jpg",
+        "description": "door opening to courtyard garden",
+        "duration_s": 4,
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_085543_f1316c4f-7833-4af0-90e3-c1a9699ef06c.mp4",
+        "save_as": "ad-5-the-morning_shot-3-door.mp4"
+      },
+      {
+        "shot": 4,
+        "job_id": "5c766856-c7f3-4235-8cac-538aa67ac5e6",
+        "source_file": "modern-mews-dusk-from-outside.jpg",
+        "description": "wide interior, dusk settling",
+        "duration_s": 4,
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_085549_5c766856-c7f3-4235-8cac-538aa67ac5e6.mp4",
+        "save_as": "ad-5-the-morning_shot-4-dusk.mp4"
+      },
+      {
+        "shot": 5,
+        "job_id": "9c056a4e-194b-4a9c-8d14-4ccfe64af3d2",
+        "source_file": "(generated 9:16 title plate)",
+        "description": "title card: 'We design houses around light. / Coffey Residential. London, since 2005.'",
+        "duration_s": 3,
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_085552_9c056a4e-194b-4a9c-8d14-4ccfe64af3d2.png",
+        "save_as": "ad-5-the-morning_title-card.png"
+      }
+    ],
+    "final_output": "ad-5-the-morning.mp4 (15s, stitched by download-ad-5.ps1 via ffmpeg: 3s per shot + 3s title)",
+    "v2_replacements": [
+      {
+        "shot": 3,
+        "job_id": "4c194c94-a4a6-4f4a-a317-177ecae101ec",
+        "source_file": "meadow-grove-under-stairs.jpg",
+        "source_media_id": "47ba28fb-2eb1-4c76-ac52-24a73e50e656",
+        "description": "tighter motion brief — start frame fixed, subtle push + light breathing only",
+        "duration_s": 4,
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_095201_4c194c94-a4a6-4f4a-a317-177ecae101ec.mp4",
+        "save_as": "ad-5-the-morning_shot-3-under-stairs.mp4",
+        "replaces": "ad-5-the-morning_shot-3-door.mp4"
+      },
+      {
+        "shot": 4,
+        "job_id": "b8dae9f4-f470-48e9-b6b4-450d47ed79a0",
+        "source_file": "meadow-grove-full-height.jpg",
+        "source_media_id": "2eb040b5-2f7c-4ad9-a4fd-98e7349904e3",
+        "description": "tighter motion brief — start frame fixed, subtle upward drift + light brightening only",
+        "duration_s": 4,
+        "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3DcB3TWAyKGVDci2Bpamfbf1356/hf_20260516_095207_b8dae9f4-f470-48e9-b6b4-450d47ed79a0.mp4",
+        "save_as": "ad-5-the-morning_shot-4-full-height.mp4",
+        "replaces": "ad-5-the-morning_shot-4-dusk.mp4"
+      }
+    ]
+  }
+}

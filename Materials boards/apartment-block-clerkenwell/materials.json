@@ -1,0 +1,59 @@
+{
+  "project_slug": "apartment-block-clerkenwell",
+  "project_name": "Apartment Block, Clerkenwell",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Pale rift-cut European oak panel",
+      "use": "Wall and door joinery",
+      "category": "Timber"
+    },
+    {
+      "id": 2,
+      "name": "Linen-stretched timber-framed shutter",
+      "use": "Bedroom and study sliding screens",
+      "category": "Other"
+    },
+    {
+      "id": 3,
+      "name": "End-grain oak block",
+      "use": "Signature floor and ceiling (30,000 hand-cut blocks)",
+      "category": "Timber"
+    },
+    {
+      "id": 4,
+      "name": "Glazed Victorian yellow stock brick",
+      "use": "Retained industrial-building dado",
+      "category": "Other"
+    },
+    {
+      "id": 5,
+      "name": "Warm-white lime plaster",
+      "use": "Walls",
+      "category": "Plaster"
+    },
+    {
+      "id": 6,
+      "name": "Cast-iron column radiator (painted near-black)",
+      "use": "Heritage radiator",
+      "category": "Metal"
+    },
+    {
+      "id": 7,
+      "name": "Painted-timber Victorian sash window detail",
+      "use": "Three-metre sash windows",
+      "category": "Timber"
+    },
+    {
+      "id": 8,
+      "name": "Pale grey loop-pile wool carpet",
+      "use": "Bedroom flooring",
+      "category": "Fabric"
+    }
+  ]
+}

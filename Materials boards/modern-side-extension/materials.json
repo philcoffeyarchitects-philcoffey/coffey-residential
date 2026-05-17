@@ -1,0 +1,59 @@
+{
+  "project_slug": "modern-side-extension",
+  "project_name": "Modern Side Extension, Queens Park",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Pale natural European oak",
+      "use": "Kitchen island and entrance portal frame",
+      "category": "Timber"
+    },
+    {
+      "id": 2,
+      "name": "White matt-lacquered MDF",
+      "use": "Kitchen joinery",
+      "category": "Other"
+    },
+    {
+      "id": 3,
+      "name": "Warm-white matt plaster",
+      "use": "Extension ceiling and walls",
+      "category": "Plaster"
+    },
+    {
+      "id": 4,
+      "name": "Pale polished concrete",
+      "use": "Continuous indoor-outdoor floor",
+      "category": "Stone"
+    },
+    {
+      "id": 5,
+      "name": "Frameless clear float glass",
+      "use": "Slim glazing",
+      "category": "Glass"
+    },
+    {
+      "id": 6,
+      "name": "Brushed-silver aluminium frame",
+      "use": "Glazing frame",
+      "category": "Metal"
+    },
+    {
+      "id": 7,
+      "name": "Yellow London stock brick",
+      "use": "Retained side wall, signature anchor",
+      "category": "Other"
+    },
+    {
+      "id": 8,
+      "name": "Painted-timber Victorian sash window detail",
+      "use": "Retained existing window",
+      "category": "Timber"
+    }
+  ]
+}

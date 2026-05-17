@@ -1,0 +1,53 @@
+{
+  "project_slug": "canyon-house-clerkenwell",
+  "project_name": "Canyon House, Clerkenwell",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Antique mirror panel",
+      "use": "Mirrored slot corridor",
+      "category": "Glass"
+    },
+    {
+      "id": 2,
+      "name": "Pale green-tinted laminated glass",
+      "use": "Signature glass floor panel",
+      "category": "Glass"
+    },
+    {
+      "id": 3,
+      "name": "Brushed stainless steel",
+      "use": "Kitchen tap and integrated trim",
+      "category": "Metal"
+    },
+    {
+      "id": 4,
+      "name": "Pure-white Corian / quartz",
+      "use": "Kitchen island worktop",
+      "category": "Other"
+    },
+    {
+      "id": 5,
+      "name": "American black walnut",
+      "use": "Dining table timber",
+      "category": "Timber"
+    },
+    {
+      "id": 6,
+      "name": "Reclaimed London stock brick",
+      "use": "Retained warehouse wall",
+      "category": "Other"
+    },
+    {
+      "id": 7,
+      "name": "Dark charcoal-grey honed porcelain tile",
+      "use": "Main floor finish",
+      "category": "Tile"
+    }
+  ]
+}

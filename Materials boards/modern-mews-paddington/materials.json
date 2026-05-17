@@ -1,0 +1,59 @@
+{
+  "project_slug": "modern-mews-paddington",
+  "project_name": "Modern Mews, Paddington",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Pale natural European oak",
+      "use": "Central oak stair, joinery and ceiling lining",
+      "category": "Timber"
+    },
+    {
+      "id": 2,
+      "name": "White-painted London stock brick",
+      "use": "Dominant interior wall finish",
+      "category": "Other"
+    },
+    {
+      "id": 3,
+      "name": "Pale polished concrete",
+      "use": "Lower-ground floor and fireplace plinth",
+      "category": "Stone"
+    },
+    {
+      "id": 4,
+      "name": "Rice-paper sliding-screen panel",
+      "use": "Sliding doors (washi paper + timber lattice)",
+      "category": "Other"
+    },
+    {
+      "id": 5,
+      "name": "Frameless laminated clear float glass",
+      "use": "Glazed floor panel",
+      "category": "Glass"
+    },
+    {
+      "id": 6,
+      "name": "Brushed brass",
+      "use": "Detailing",
+      "category": "Metal"
+    },
+    {
+      "id": 7,
+      "name": "Matte black powder-coated steel",
+      "use": "Slim window framing",
+      "category": "Metal"
+    },
+    {
+      "id": 8,
+      "name": "Warm-white matt plaster",
+      "use": "Walls",
+      "category": "Plaster"
+    }
+  ]
+}

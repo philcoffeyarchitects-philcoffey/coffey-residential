@@ -37,19 +37,21 @@ ALREADY_RX = re.compile(
     re.DOTALL,
 )
 
-# Try these in order — first one that matches wins.
-INSERTION_PATTERNS = [
-    # 1. After the existing "Materials & makers" .section-2col block
-    re.compile(
-        r'(<section class="section-2col">\s*<div class="section-2col__grid">\s*'
-        r'<div class="section-2col__lhs">\s*'
-        r'<span class="eyebrow">Materials\s*(?:&amp;|&)\s*makers</span>.*?</section>)',
-        re.DOTALL | re.IGNORECASE,
-    ),
-    # 2. Just before the next/prev section
+# The legacy "Materials & makers / What it's made of" text-list section.
+# This is now replaced by the materials-board section — its heading and
+# eyebrow live on but the simple list is dropped in favour of the board.
+LEGACY_MATERIALS_RX = re.compile(
+    r'<section class="section-2col">\s*<div class="section-2col__grid">\s*'
+    r'<div class="section-2col__lhs">\s*'
+    r'<span class="eyebrow">Materials\s*(?:&amp;|&)\s*makers</span>.*?</section>',
+    re.DOTALL | re.IGNORECASE,
+)
+
+# Fallback insertion points (in order) for projects where the legacy
+# section didn't exist to replace.
+FALLBACK_INSERTION_PATTERNS = [
     re.compile(r'(<section class="nextprev">)', re.IGNORECASE),
     re.compile(r'(<section class="next-prev">)', re.IGNORECASE),
-    # 3. Just before the CTA panel
     re.compile(r'(<section class="cta">)', re.IGNORECASE),
 ]
 
@@ -93,8 +95,8 @@ def build_section(entry: dict, data: dict) -> str:
         f"{MARK_START}\n"
         f'<section class="materials-board" aria-labelledby="materials-board-heading">\n'
         f'  <div class="materials-board__head">\n'
-        f'    <span class="eyebrow">Materials &middot; board</span>\n'
-        f'    <h2 id="materials-board-heading">{html.escape(project_name)} &mdash; materials, all on one surface.</h2>\n'
+        f'    <span class="eyebrow">Materials &amp; makers</span>\n'
+        f'    <h2 id="materials-board-heading">What it&rsquo;s made of.</h2>\n'
         f'  </div>\n'
         f'  <div class="materials-board__layout">\n'
         f'    <figure class="materials-board__image">\n'
@@ -114,33 +116,45 @@ def build_section(entry: dict, data: dict) -> str:
 
 
 def process_file(html_path: Path, entry: dict, data: dict) -> str | None:
-    """Insert or refresh the materials section. Returns the action taken."""
+    """Insert/refresh the materials section AND remove the legacy
+    "Materials & makers" .section-2col text-list. Returns the action."""
     text = html_path.read_text(encoding="utf-8")
+    original = text
     section = build_section(entry, data)
+    actions = []
 
-    # If already present, replace existing block with the fresh one.
+    # Strip the legacy text-list section if present. The board takes
+    # its place (and inherits its eyebrow + heading).
+    new_text, n_removed = LEGACY_MATERIALS_RX.subn("", text)
+    if n_removed:
+        # Tidy up any double blank lines left behind by the removal.
+        new_text = re.sub(r"\n{3,}", "\n\n", new_text)
+        text = new_text
+        actions.append("legacy-removed")
+
+    # Refresh or insert the materials-board section itself.
     if ALREADY_RX.search(text):
-        new_text = ALREADY_RX.sub(lambda _m: section, text, count=1)
-        if new_text == text:
-            return "unchanged"
-        html_path.write_text(new_text, encoding="utf-8")
-        return "refreshed"
+        text = ALREADY_RX.sub(lambda _m: section, text, count=1)
+        actions.append("refreshed")
+    else:
+        # Find a fallback insertion point — the legacy section it used to
+        # sit after may have just been removed above.
+        inserted = False
+        for rx in FALLBACK_INSERTION_PATTERNS:
+            m = rx.search(text)
+            if not m:
+                continue
+            text = text[: m.start()] + section + "\n\n" + text[m.start():]
+            actions.append(f"inserted-before-{rx.pattern[len('(<section class='):-2]}")
+            inserted = True
+            break
+        if not inserted:
+            return None
 
-    # Otherwise find an insertion point.
-    for rx in INSERTION_PATTERNS:
-        m = rx.search(text)
-        if not m:
-            continue
-        # If the pattern captured a whole block (variant 1), insert after.
-        # Otherwise insert before the matched <section>.
-        if rx is INSERTION_PATTERNS[0]:
-            new_text = text[: m.end()] + "\n\n" + section + "\n" + text[m.end():]
-        else:
-            new_text = text[: m.start()] + section + "\n\n" + text[m.start():]
-        html_path.write_text(new_text, encoding="utf-8")
-        return f"inserted (via pattern {INSERTION_PATTERNS.index(rx) + 1})"
-
-    return None  # no insertion point found
+    if text == original:
+        return "unchanged"
+    html_path.write_text(text, encoding="utf-8")
+    return ", ".join(actions)
 
 
 def main() -> None:

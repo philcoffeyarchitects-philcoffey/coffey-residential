@@ -1,0 +1,65 @@
+{
+  "project_slug": "arch-study-notting-hill",
+  "project_name": "Arch Study, Notting Hill",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Reclaimed London stock brick (lime-mortar wash)",
+      "use": "Historic ceiling vaults",
+      "category": "Other"
+    },
+    {
+      "id": 2,
+      "name": "Walnut (or fumed oak)",
+      "use": "Lower kitchen cabinetry",
+      "category": "Timber"
+    },
+    {
+      "id": 3,
+      "name": "Aged brass",
+      "use": "Small wall-plaque detail",
+      "category": "Metal"
+    },
+    {
+      "id": 4,
+      "name": "Reclaimed London stock brick (clean face)",
+      "use": "Historic ceiling vaults",
+      "category": "Other"
+    },
+    {
+      "id": 5,
+      "name": "Pale rift-cut European oak",
+      "use": "Dominant joinery",
+      "category": "Timber"
+    },
+    {
+      "id": 6,
+      "name": "Cognac saddle leather",
+      "use": "Study banquette upholstery",
+      "category": "Leather"
+    },
+    {
+      "id": 7,
+      "name": "Matte-black blackened bronze",
+      "use": "Mixer tap and chandelier finish",
+      "category": "Metal"
+    },
+    {
+      "id": 8,
+      "name": "Honed travertine slab",
+      "use": "Kitchen worktop",
+      "category": "Stone"
+    },
+    {
+      "id": 9,
+      "name": "Fluted travertine",
+      "use": "Signature backsplash and curved corridor wall",
+      "category": "Stone"
+    }
+  ]
+}
