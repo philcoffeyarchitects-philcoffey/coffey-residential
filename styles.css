@@ -3958,14 +3958,54 @@ a.quick-contacts__cell .v,
   .homes-hero h1 { font-size: 56px; }
   .homes-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .filter-row { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px 24px; }
-  .project-row--index .pr-content { padding: 40px 24px; }
-  .project-row--index .pr-title { font-size: 32px; }
-  /* Force text-on-top, image-below for every tile on mobile, regardless
-     of the JS-driven row-flip alternation used on desktop. */
-  .project-row--index .pr-image,
-  .project-row--index.row-flip .pr-image   { order: 2; }
+  /* Reorder each tile on mobile so it reads:
+       eyebrow (01 / 20 · NEW BUILD)
+       title   (Meadow Grove)
+       image
+       location
+       body copy
+       foot (View project / year)
+     We flatten .pr-content via `display: contents` so its children
+     become direct grid items of .project-row, and use explicit
+     `grid-row` placement on each — `order` alone is unreliable
+     with display:contents children in current Chromium. Explicit
+     grid-row pins each element to a specific row regardless of
+     source order. Horizontal gutter padding (previously on
+     .pr-content) is re-applied to each text child since .pr-content
+     is no longer rendering a box. */
+  .project-row--index {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+  }
+  /* The .pr-content has an unnamed wrapper div around eyebrow/title/
+     loc/body, then pr-foot as a sibling. Flatten both layers so all
+     leaf elements become direct grid items of .project-row. */
   .project-row--index .pr-content,
-  .project-row--index.row-flip .pr-content { order: 1; }
+  .project-row--index .pr-content > div:first-child { display: contents; }
+  .project-row--index .pr-eyebrow,
+  .project-row--index .pr-title,
+  .project-row--index .pr-loc,
+  .project-row--index .pr-body,
+  .project-row--index .pr-foot {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .project-row--index .pr-eyebrow {
+    grid-row: 1;
+    padding-top: 40px;
+    margin-bottom: 12px;
+  }
+  .project-row--index .pr-title,
+  .project-row--index.row-flip .pr-title {
+    grid-row: 2;
+    font-size: 32px;
+    margin: 0;
+  }
+  .project-row--index .pr-image,
+  .project-row--index.row-flip .pr-image   { grid-row: 3; margin-top: 24px; }
+  .project-row--index .pr-loc              { grid-row: 4; margin-top: 24px; }
+  .project-row--index .pr-body             { grid-row: 5; margin-top: 16px; }
+  .project-row--index .pr-foot             { grid-row: 6; margin-top: 32px; padding-bottom: 40px; }
 }
 
 /* ============= Lightbox =============
