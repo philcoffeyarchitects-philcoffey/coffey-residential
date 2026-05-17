@@ -4085,6 +4085,54 @@ a.quick-contacts__cell .v,
 }
 
 /* ==========================================================
+   INLINE CTA BAND
+   A compact mid-page conversion ask that sits between sections.
+   Italic serif statement on the left, button on the right.
+   Hairline borders top and bottom separate it from neighbours
+   without competing for attention — quieter than the full
+   bottom CTA panel ("Tell us about your house").
+   ========================================================== */
+
+.inline-cta {
+  padding: 80px var(--gutter);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.inline-cta__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  max-width: 1392px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.inline-cta__text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--fg);
+  max-width: 640px;
+}
+
+@media (max-width: 800px) {
+  .inline-cta { padding: 48px 24px; }
+  .inline-cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .inline-cta__text { font-size: 24px; }
+}
+@media (max-width: 500px) {
+  .inline-cta { padding: 40px 20px; }
+  .inline-cta__text { font-size: 22px; }
+}
+
+/* ==========================================================
    MATERIALS BOARD
    Per-project overhead flat-lay of physical material samples
    with a numbered key on the right. Sits near the bottom of
