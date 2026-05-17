@@ -1,0 +1,59 @@
+{
+  "project_slug": "helios-house-white-city",
+  "project_name": "Helios House, White City",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Perforated brass screen",
+      "use": "Signature room divider",
+      "category": "Metal"
+    },
+    {
+      "id": 2,
+      "name": "Calacatta marble",
+      "use": "Kitchen island and back-niche stone",
+      "category": "Stone"
+    },
+    {
+      "id": 3,
+      "name": "Brushed brass",
+      "use": "Tap fitting (matches the screen)",
+      "category": "Metal"
+    },
+    {
+      "id": 4,
+      "name": "White matt-lacquered MDF",
+      "use": "Kitchen joinery",
+      "category": "Other"
+    },
+    {
+      "id": 5,
+      "name": "Pale terrazzo",
+      "use": "Floor finish",
+      "category": "Tile"
+    },
+    {
+      "id": 6,
+      "name": "Warm-white matt plaster",
+      "use": "Walls",
+      "category": "Plaster"
+    },
+    {
+      "id": 7,
+      "name": "Frameless clear float glass",
+      "use": "Balustrade material",
+      "category": "Glass"
+    },
+    {
+      "id": 8,
+      "name": "Anthracite-grey powder-coated aluminium frame",
+      "use": "Glazing framing",
+      "category": "Metal"
+    }
+  ]
+}

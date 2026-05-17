@@ -1,0 +1,59 @@
+{
+  "project_slug": "ad-house-york",
+  "project_name": "AD House, York",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Charcoal-stained shiplap timber cladding",
+      "use": "Boundary-wall material",
+      "category": "Timber"
+    },
+    {
+      "id": 2,
+      "name": "Douglas fir softwood",
+      "use": "Exposed pitched-roof structure",
+      "category": "Timber"
+    },
+    {
+      "id": 3,
+      "name": "Recycled natural zinc cladding",
+      "use": "Signature exterior cladding",
+      "category": "Metal"
+    },
+    {
+      "id": 4,
+      "name": "London stock brick",
+      "use": "Garden walls beyond the glazing",
+      "category": "Other"
+    },
+    {
+      "id": 5,
+      "name": "Warm-white matt plaster",
+      "use": "Extension walls and ceiling",
+      "category": "Plaster"
+    },
+    {
+      "id": 6,
+      "name": "Brushed-aluminium glazing frame",
+      "use": "Slim glazing framing",
+      "category": "Metal"
+    },
+    {
+      "id": 7,
+      "name": "Pale rift-cut European oak",
+      "use": "Floor and step joinery",
+      "category": "Timber"
+    },
+    {
+      "id": 8,
+      "name": "Frameless clear float glass",
+      "use": "Glazing",
+      "category": "Glass"
+    }
+  ]
+}

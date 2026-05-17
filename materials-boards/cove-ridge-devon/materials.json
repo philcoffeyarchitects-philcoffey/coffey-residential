@@ -1,0 +1,59 @@
+{
+  "project_slug": "cove-ridge-devon",
+  "project_name": "Cove Ridge, Devon",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Textured tyrolean render",
+      "use": "Signature 'blackened ceiling'",
+      "category": "Plaster"
+    },
+    {
+      "id": 2,
+      "name": "Pale ash floor plank",
+      "use": "Living-room and bedroom floor",
+      "category": "Timber"
+    },
+    {
+      "id": 3,
+      "name": "Sheer white linen curtain",
+      "use": "Bedroom and bathroom curtain",
+      "category": "Fabric"
+    },
+    {
+      "id": 4,
+      "name": "Honed near-black basalt",
+      "use": "Kitchen worktop and fireplace surround",
+      "category": "Stone"
+    },
+    {
+      "id": 5,
+      "name": "Pale rift-cut European oak",
+      "use": "Kitchen tall units and bathroom wardrobes",
+      "category": "Timber"
+    },
+    {
+      "id": 6,
+      "name": "Pale honed limestone paving slab",
+      "use": "Long sea-facing terrace",
+      "category": "Stone"
+    },
+    {
+      "id": 7,
+      "name": "Frameless clear float glass",
+      "use": "Sea-view picture window",
+      "category": "Glass"
+    },
+    {
+      "id": 8,
+      "name": "Brushed stainless steel",
+      "use": "Bath and kitchen tap fittings",
+      "category": "Metal"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "project_slug": "modern-barn-devon",
+  "project_name": "Modern Barn, Devon",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Warm-white matt plaster",
+      "use": "Interior walls",
+      "category": "Plaster"
+    },
+    {
+      "id": 2,
+      "name": "Frameless clear float glass",
+      "use": "Picture-window glazing",
+      "category": "Glass"
+    },
+    {
+      "id": 3,
+      "name": "Pale natural European oak",
+      "use": "Interior floor",
+      "category": "Timber"
+    },
+    {
+      "id": 4,
+      "name": "Natural softwood rafter timber",
+      "use": "Exposed interior roof structure",
+      "category": "Timber"
+    },
+    {
+      "id": 5,
+      "name": "Vertical larch cladding",
+      "use": "Signature exterior cladding",
+      "category": "Timber"
+    },
+    {
+      "id": 6,
+      "name": "Matte black powder-coated steel",
+      "use": "Window framing",
+      "category": "Metal"
+    },
+    {
+      "id": 7,
+      "name": "Coursed local Devon rubble stone",
+      "use": "Entrance plinth",
+      "category": "Stone"
+    },
+    {
+      "id": 8,
+      "name": "Pale honed limestone paving",
+      "use": "Long terrace",
+      "category": "Stone"
+    }
+  ]
+}

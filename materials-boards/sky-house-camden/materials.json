@@ -1,0 +1,59 @@
+{
+  "project_slug": "sky-house-camden",
+  "project_name": "Sky House, Camden",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Forest-green painted structural steel",
+      "use": "Signature exposed coloured roof trusses",
+      "category": "Metal"
+    },
+    {
+      "id": 2,
+      "name": "Pale natural European oak shelving veneer",
+      "use": "Full-height bookcase walls",
+      "category": "Timber"
+    },
+    {
+      "id": 3,
+      "name": "Yellow-pigmented cast acrylic panel",
+      "use": "Signature yellow-pigmented skylight",
+      "category": "Glass"
+    },
+    {
+      "id": 4,
+      "name": "Frameless clear float glass",
+      "use": "Picture-window glazing",
+      "category": "Glass"
+    },
+    {
+      "id": 5,
+      "name": "Split-face dark charcoal slate",
+      "use": "Bathroom feature wall",
+      "category": "Stone"
+    },
+    {
+      "id": 6,
+      "name": "Warm-white matt plaster",
+      "use": "Ceilings",
+      "category": "Plaster"
+    },
+    {
+      "id": 7,
+      "name": "Honed mid-grey porcelain floor tile",
+      "use": "Open-plan floor",
+      "category": "Tile"
+    },
+    {
+      "id": 8,
+      "name": "Light grey matt-lacquered MDF",
+      "use": "Kitchen joinery",
+      "category": "Other"
+    }
+  ]
+}

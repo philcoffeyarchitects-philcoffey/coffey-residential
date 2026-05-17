@@ -1,0 +1,59 @@
+{
+  "project_slug": "kitchen-garden-maida-vale",
+  "project_name": "Kitchen Garden, Maida Vale",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Warm-taupe matt-lacquered MDF",
+      "use": "Kitchen joinery",
+      "category": "Other"
+    },
+    {
+      "id": 2,
+      "name": "Carrara marble",
+      "use": "Island worktop and back-splash",
+      "category": "Stone"
+    },
+    {
+      "id": 3,
+      "name": "Brushed stainless steel",
+      "use": "Extractor canopy finish",
+      "category": "Metal"
+    },
+    {
+      "id": 4,
+      "name": "Pale natural European oak",
+      "use": "Long dining counter",
+      "category": "Timber"
+    },
+    {
+      "id": 5,
+      "name": "Pale polished concrete floor",
+      "use": "Open-plan flooring",
+      "category": "Stone"
+    },
+    {
+      "id": 6,
+      "name": "Frameless clear float glass",
+      "use": "Ultra-slim glazing",
+      "category": "Glass"
+    },
+    {
+      "id": 7,
+      "name": "Brushed-silver aluminium frame",
+      "use": "Linear rooflight frame",
+      "category": "Metal"
+    },
+    {
+      "id": 8,
+      "name": "Yellow London stock brick",
+      "use": "Existing garden boundary wall",
+      "category": "Other"
+    }
+  ]
+}

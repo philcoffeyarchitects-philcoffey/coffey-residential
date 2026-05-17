@@ -1,0 +1,59 @@
+{
+  "project_slug": "garden-lodge-harpenden",
+  "project_name": "Garden Lodge, Harpenden",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Warm red Edwardian-stock brick",
+      "use": "Matched extension brick",
+      "category": "Other"
+    },
+    {
+      "id": 2,
+      "name": "White-painted red brick",
+      "use": "Interior extension wall finish",
+      "category": "Other"
+    },
+    {
+      "id": 3,
+      "name": "Pale polished concrete",
+      "use": "Open-plan floor",
+      "category": "Stone"
+    },
+    {
+      "id": 4,
+      "name": "Honed pale travertine",
+      "use": "Long bench reveal",
+      "category": "Stone"
+    },
+    {
+      "id": 5,
+      "name": "Anthracite-grey powder-coated aluminium frame",
+      "use": "Glazing framing",
+      "category": "Metal"
+    },
+    {
+      "id": 6,
+      "name": "Statuario marble",
+      "use": "Kitchen worktop and back-splash",
+      "category": "Stone"
+    },
+    {
+      "id": 7,
+      "name": "White matt-lacquered MDF",
+      "use": "Cabinetry",
+      "category": "Other"
+    },
+    {
+      "id": 8,
+      "name": "Natural-clay terracotta roof tile",
+      "use": "Matched extension roof",
+      "category": "Tile"
+    }
+  ]
+}

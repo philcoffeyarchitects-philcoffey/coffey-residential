@@ -1,0 +1,59 @@
+{
+  "project_slug": "folded-house-islington",
+  "project_name": "Folded House, Islington",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Pale Baltic birch plywood face veneer",
+      "use": "Signature stair and ceiling lining",
+      "category": "Timber"
+    },
+    {
+      "id": 2,
+      "name": "Matte black powder-coated steel",
+      "use": "Rooflight framing and pendant fitting",
+      "category": "Metal"
+    },
+    {
+      "id": 3,
+      "name": "Brushed-silver anodised aluminium frame",
+      "use": "Glazing frame",
+      "category": "Metal"
+    },
+    {
+      "id": 4,
+      "name": "Birch plywood end-grain edge",
+      "use": "Exposed plywood edges of the folded geometry",
+      "category": "Timber"
+    },
+    {
+      "id": 5,
+      "name": "White matt-paint plaster wall",
+      "use": "Walls",
+      "category": "Plaster"
+    },
+    {
+      "id": 6,
+      "name": "Frameless clear float glass",
+      "use": "Ocular rooflight",
+      "category": "Glass"
+    },
+    {
+      "id": 7,
+      "name": "Pale polished concrete",
+      "use": "Ground-floor flooring",
+      "category": "Stone"
+    },
+    {
+      "id": 8,
+      "name": "Off-white linen upholstery",
+      "use": "Living-room sofa",
+      "category": "Fabric"
+    }
+  ]
+}

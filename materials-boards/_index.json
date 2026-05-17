@@ -1,0 +1,188 @@
+{
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "note": "materials.json ordering matches the numbered circles on materials-board.jpg. Numbering is in visual reading order \u2014 top-to-bottom, left-to-right.",
+  "count": 20,
+  "projects": [
+    {
+      "project_slug": "ad-house-york",
+      "project_name": "AD House, York",
+      "folder": "ad-house-york",
+      "materials_json": "ad-house-york/materials.json",
+      "board_image": "ad-house-york/materials-board.jpg",
+      "board_image_clean": "ad-house-york/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "apartment-block-clerkenwell",
+      "project_name": "Apartment Block, Clerkenwell",
+      "folder": "apartment-block-clerkenwell",
+      "materials_json": "apartment-block-clerkenwell/materials.json",
+      "board_image": "apartment-block-clerkenwell/materials-board.jpg",
+      "board_image_clean": "apartment-block-clerkenwell/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "arch-study-notting-hill",
+      "project_name": "Arch Study, Notting Hill",
+      "folder": "arch-study-notting-hill",
+      "materials_json": "arch-study-notting-hill/materials.json",
+      "board_image": "arch-study-notting-hill/materials-board.jpg",
+      "board_image_clean": "arch-study-notting-hill/materials-board_clean.jpg",
+      "material_count": 9
+    },
+    {
+      "project_slug": "canyon-house-clerkenwell",
+      "project_name": "Canyon House, Clerkenwell",
+      "folder": "canyon-house-clerkenwell",
+      "materials_json": "canyon-house-clerkenwell/materials.json",
+      "board_image": "canyon-house-clerkenwell/materials-board.jpg",
+      "board_image_clean": "canyon-house-clerkenwell/materials-board_clean.jpg",
+      "material_count": 7
+    },
+    {
+      "project_slug": "capablanca-house-barnsbury",
+      "project_name": "Capablanca House, Barnsbury",
+      "folder": "capablanca-house-barnsbury",
+      "materials_json": "capablanca-house-barnsbury/materials.json",
+      "board_image": "capablanca-house-barnsbury/materials-board.jpg",
+      "board_image_clean": "capablanca-house-barnsbury/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "cove-ridge-devon",
+      "project_name": "Cove Ridge, Devon",
+      "folder": "cove-ridge-devon",
+      "materials_json": "cove-ridge-devon/materials.json",
+      "board_image": "cove-ridge-devon/materials-board.jpg",
+      "board_image_clean": "cove-ridge-devon/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "folded-house-islington",
+      "project_name": "Folded House, Islington",
+      "folder": "folded-house-islington",
+      "materials_json": "folded-house-islington/materials.json",
+      "board_image": "folded-house-islington/materials-board.jpg",
+      "board_image_clean": "folded-house-islington/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "garden-lodge-harpenden",
+      "project_name": "Garden Lodge, Harpenden",
+      "folder": "garden-lodge-harpenden",
+      "materials_json": "garden-lodge-harpenden/materials.json",
+      "board_image": "garden-lodge-harpenden/materials-board.jpg",
+      "board_image_clean": "garden-lodge-harpenden/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "helios-house-white-city",
+      "project_name": "Helios House, White City",
+      "folder": "helios-house-white-city",
+      "materials_json": "helios-house-white-city/materials.json",
+      "board_image": "helios-house-white-city/materials-board.jpg",
+      "board_image_clean": "helios-house-white-city/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "hidden-house-clerkenwell",
+      "project_name": "Hidden House, Clerkenwell",
+      "folder": "hidden-house-clerkenwell",
+      "materials_json": "hidden-house-clerkenwell/materials.json",
+      "board_image": "hidden-house-clerkenwell/materials-board.jpg",
+      "board_image_clean": "hidden-house-clerkenwell/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "island-home-shoreditch",
+      "project_name": "Island Home, Shoreditch",
+      "folder": "island-home-shoreditch",
+      "materials_json": "island-home-shoreditch/materials.json",
+      "board_image": "island-home-shoreditch/materials-board.jpg",
+      "board_image_clean": "island-home-shoreditch/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "kitchen-garden-maida-vale",
+      "project_name": "Kitchen Garden, Maida Vale",
+      "folder": "kitchen-garden-maida-vale",
+      "materials_json": "kitchen-garden-maida-vale/materials.json",
+      "board_image": "kitchen-garden-maida-vale/materials-board.jpg",
+      "board_image_clean": "kitchen-garden-maida-vale/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "meadow-grove-barnes",
+      "project_name": "Meadow Grove, Barnes",
+      "folder": "meadow-grove-barnes",
+      "materials_json": "meadow-grove-barnes/materials.json",
+      "board_image": "meadow-grove-barnes/materials-board.jpg",
+      "board_image_clean": "meadow-grove-barnes/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "modern-barn-devon",
+      "project_name": "Modern Barn, Devon",
+      "folder": "modern-barn-devon",
+      "materials_json": "modern-barn-devon/materials.json",
+      "board_image": "modern-barn-devon/materials-board.jpg",
+      "board_image_clean": "modern-barn-devon/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "modern-detached-harpenden",
+      "project_name": "Modern Detached, Harpenden",
+      "folder": "modern-detached-harpenden",
+      "materials_json": "modern-detached-harpenden/materials.json",
+      "board_image": "modern-detached-harpenden/materials-board.jpg",
+      "board_image_clean": "modern-detached-harpenden/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "modern-mews-paddington",
+      "project_name": "Modern Mews, Paddington",
+      "folder": "modern-mews-paddington",
+      "materials_json": "modern-mews-paddington/materials.json",
+      "board_image": "modern-mews-paddington/materials-board.jpg",
+      "board_image_clean": "modern-mews-paddington/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "modern-side-extension",
+      "project_name": "Modern Side Extension, Queens Park",
+      "folder": "modern-side-extension",
+      "materials_json": "modern-side-extension/materials.json",
+      "board_image": "modern-side-extension/materials-board.jpg",
+      "board_image_clean": "modern-side-extension/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "modern-terrace-islington",
+      "project_name": "Modern Terrace, Islington",
+      "folder": "modern-terrace-islington",
+      "materials_json": "modern-terrace-islington/materials.json",
+      "board_image": "modern-terrace-islington/materials-board.jpg",
+      "board_image_clean": "modern-terrace-islington/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "sky-house-camden",
+      "project_name": "Sky House, Camden",
+      "folder": "sky-house-camden",
+      "materials_json": "sky-house-camden/materials.json",
+      "board_image": "sky-house-camden/materials-board.jpg",
+      "board_image_clean": "sky-house-camden/materials-board_clean.jpg",
+      "material_count": 8
+    },
+    {
+      "project_slug": "well-house-islington",
+      "project_name": "Well House, Islington",
+      "folder": "well-house-islington",
+      "materials_json": "well-house-islington/materials.json",
+      "board_image": "well-house-islington/materials-board.jpg",
+      "board_image_clean": "well-house-islington/materials-board_clean.jpg",
+      "material_count": 8
+    }
+  ]
+}

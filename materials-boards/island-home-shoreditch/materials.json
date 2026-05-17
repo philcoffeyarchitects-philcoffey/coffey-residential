@@ -1,0 +1,59 @@
+{
+  "project_slug": "island-home-shoreditch",
+  "project_name": "Island Home, Shoreditch",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Architectural glass block",
+      "use": "Wall light-panel (sea-green tint)",
+      "category": "Glass"
+    },
+    {
+      "id": 2,
+      "name": "Switchable electrochromic smart glass",
+      "use": "Touch-translucent screen",
+      "category": "Glass"
+    },
+    {
+      "id": 3,
+      "name": "Brushed stainless steel",
+      "use": "Signature double-height kitchen island and stair cladding",
+      "category": "Metal"
+    },
+    {
+      "id": 4,
+      "name": "Anthracite-grey powder-coated aluminium frame",
+      "use": "Glazing frame",
+      "category": "Metal"
+    },
+    {
+      "id": 5,
+      "name": "Frameless clear float glass",
+      "use": "Picture-window glazing",
+      "category": "Glass"
+    },
+    {
+      "id": 6,
+      "name": "Bleached pale Douglas fir floor plank",
+      "use": "Living-room floor",
+      "category": "Timber"
+    },
+    {
+      "id": 7,
+      "name": "White matt-lacquered MDF",
+      "use": "Full-height wall joinery",
+      "category": "Other"
+    },
+    {
+      "id": 8,
+      "name": "Pale polished concrete",
+      "use": "Flooring detail",
+      "category": "Stone"
+    }
+  ]
+}

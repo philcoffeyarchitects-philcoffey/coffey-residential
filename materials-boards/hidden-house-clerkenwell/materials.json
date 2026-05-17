@@ -1,0 +1,59 @@
+{
+  "project_slug": "hidden-house-clerkenwell",
+  "project_name": "Hidden House, Clerkenwell",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Matte black powder-coated steel",
+      "use": "Round flue and slim window framing",
+      "category": "Metal"
+    },
+    {
+      "id": 2,
+      "name": "Frameless clear float glass",
+      "use": "Picture window glazing",
+      "category": "Glass"
+    },
+    {
+      "id": 3,
+      "name": "Warm-white matt plaster",
+      "use": "Walls",
+      "category": "Plaster"
+    },
+    {
+      "id": 4,
+      "name": "Reclaimed orange-red London stock brick",
+      "use": "Signature exterior over the vaults",
+      "category": "Other"
+    },
+    {
+      "id": 5,
+      "name": "Pale honey European oak veneer joinery",
+      "use": "Dominant interior timber",
+      "category": "Timber"
+    },
+    {
+      "id": 6,
+      "name": "Polished concrete worktop",
+      "use": "Kitchen island and window-bench top",
+      "category": "Stone"
+    },
+    {
+      "id": 7,
+      "name": "Brushed stainless steel",
+      "use": "Tap fitting",
+      "category": "Metal"
+    },
+    {
+      "id": 8,
+      "name": "Pale polished concrete floor",
+      "use": "Open-plan flooring",
+      "category": "Stone"
+    }
+  ]
+}

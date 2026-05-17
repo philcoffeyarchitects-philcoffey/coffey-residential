@@ -1,0 +1,59 @@
+{
+  "project_slug": "modern-detached-harpenden",
+  "project_name": "Modern Detached, Harpenden",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Serrated red stock brick",
+      "use": "Signature exterior fa\u00e7ade (protruding-relief profile)",
+      "category": "Other"
+    },
+    {
+      "id": 2,
+      "name": "Charred shou-sugi-ban timber slat",
+      "use": "Signature insert-volume cladding",
+      "category": "Timber"
+    },
+    {
+      "id": 3,
+      "name": "Brushed brass",
+      "use": "Signature stair balustrade and vertical screen",
+      "category": "Metal"
+    },
+    {
+      "id": 4,
+      "name": "Saturated yellow-ochre matt paint",
+      "use": "Interior accent wall",
+      "category": "Other"
+    },
+    {
+      "id": 5,
+      "name": "Matt-black painted joinery",
+      "use": "Dark feature wall",
+      "category": "Other"
+    },
+    {
+      "id": 6,
+      "name": "Honed dark charcoal stone worktop",
+      "use": "Kitchen worktop",
+      "category": "Stone"
+    },
+    {
+      "id": 7,
+      "name": "Pale large-format porcelain floor tile",
+      "use": "Open-plan flooring",
+      "category": "Tile"
+    },
+    {
+      "id": 8,
+      "name": "White matt-lacquered MDF",
+      "use": "Kitchen island and tall units",
+      "category": "Other"
+    }
+  ]
+}

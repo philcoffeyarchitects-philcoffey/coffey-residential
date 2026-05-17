@@ -1,0 +1,59 @@
+{
+  "project_slug": "capablanca-house-barnsbury",
+  "project_name": "Capablanca House, Barnsbury",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-05-17",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Dark-stained European oak",
+      "use": "Signature kitchen tall-units and office wall",
+      "category": "Timber"
+    },
+    {
+      "id": 2,
+      "name": "Yellow London stock brick",
+      "use": "Retained rear garden wall",
+      "category": "Other"
+    },
+    {
+      "id": 3,
+      "name": "Honed dark charcoal stone worktop",
+      "use": "Kitchen island worktop",
+      "category": "Stone"
+    },
+    {
+      "id": 4,
+      "name": "White matt-lacquered MDF",
+      "use": "White joinery",
+      "category": "Other"
+    },
+    {
+      "id": 5,
+      "name": "Brushed-silver anodised aluminium frame",
+      "use": "Slim sliding-door framing",
+      "category": "Metal"
+    },
+    {
+      "id": 6,
+      "name": "Honed pale grey limestone",
+      "use": "Open-plan floor",
+      "category": "Stone"
+    },
+    {
+      "id": 7,
+      "name": "Pale natural European oak",
+      "use": "Dining table timber",
+      "category": "Timber"
+    },
+    {
+      "id": 8,
+      "name": "Warm-white matt plaster",
+      "use": "Walls and ceiling",
+      "category": "Plaster"
+    }
+  ]
+}
