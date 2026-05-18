@@ -32,8 +32,12 @@ EXISTING_RX = re.compile(
 
 # Anchors for placing the block on different page types.
 PROJECT_ANCHOR = "<!-- materials-board:end -->"          # insert AFTER this
-HOMEPAGE_ANCHOR_RX = re.compile(                          # insert BEFORE this
-    r'<!--\s*=====\s*Projects.*?-->\s*<section class="projects">',
+# Homepage anchor: insert BEFORE the Services section, immediately
+# after Recent Work ends. Pushing the CTA below the project showcase
+# means visitors only meet it once they've seen real work, when
+# imagining their own project carries weight.
+HOMEPAGE_ANCHOR_RX = re.compile(
+    r'<!--\s*=====\s*Services.*?-->\s*<section class="section services">',
     re.IGNORECASE,
 )
 
