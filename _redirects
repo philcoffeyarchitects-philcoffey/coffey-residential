@@ -25,5 +25,14 @@
 # ── Other Squarespace pages with no equivalent on the new site ───────
 /privacy-policy                             /                  301
 
+# ── Forced redirects (override any matching file) ────────────────────
+# `301!` is Netlify's force-redirect flag — applies even if a file
+# exists at the source path. Use for legacy short slugs / typo'd URLs
+# that need to win over any accidental matching asset.
+/portfolio                                  /homes                       301!
+/about-us                                   /studio                      301!
+/contactus                                  /contact                     301!
+/themoderndetached                          /modern-detached-harpenden   301!
+
 # Pretty URLs already work for the new project pages because Netlify
 # serves /[slug].html when /[slug] is requested.
