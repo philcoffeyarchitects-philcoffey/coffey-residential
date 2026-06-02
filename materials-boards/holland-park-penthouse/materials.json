@@ -1,0 +1,65 @@
+{
+  "project_slug": "holland-park-penthouse",
+  "project_name": "Holland Park Penthouse, Kensington",
+  "board_image": "materials-board.jpg",
+  "board_image_clean": "materials-board_clean.jpg",
+  "ground": "warm-white painted timber",
+  "generated": "2026-06-02",
+  "numbering_pass": "complete",
+  "materials": [
+    {
+      "id": 1,
+      "name": "Pale rift-cut European oak",
+      "use": "Board floors and stair treads",
+      "category": "Timber"
+    },
+    {
+      "id": 2,
+      "name": "Warm walnut",
+      "use": "Joinery and timber detailing",
+      "category": "Timber"
+    },
+    {
+      "id": 3,
+      "name": "Honed white statuario marble",
+      "use": "Bathroom vanities",
+      "category": "Stone"
+    },
+    {
+      "id": 4,
+      "name": "Honed dark charcoal stone",
+      "use": "Kitchen island",
+      "category": "Stone"
+    },
+    {
+      "id": 5,
+      "name": "Pale stone tile",
+      "use": "Floor tiling",
+      "category": "Tile"
+    },
+    {
+      "id": 6,
+      "name": "Natural warm-white clay plaster",
+      "use": "Walls and curved ceiling",
+      "category": "Plaster"
+    },
+    {
+      "id": 7,
+      "name": "Aged brass",
+      "use": "Tapware, fittings and stair detailing",
+      "category": "Metal"
+    },
+    {
+      "id": 8,
+      "name": "Blackened steel",
+      "use": "Steel and Crittall stair screen",
+      "category": "Metal"
+    },
+    {
+      "id": 9,
+      "name": "Frameless clear float glass",
+      "use": "Stair balustrade and curtain-wall glazing",
+      "category": "Glass"
+    }
+  ]
+}
