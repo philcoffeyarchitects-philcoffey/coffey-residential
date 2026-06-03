@@ -1,5 +1,115 @@
 ﻿[
   {
+    "slug": "do-you-need-an-architect",
+    "title": "Do you need an architect for a new house or a major renovation?",
+    "date": "2026-06-10",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/holland-park-penthouse-living-room-curved-ceiling.webp",
+    "image_count": 3,
+    "word_count": 860,
+    "deck": "The honest answer, and where the fee pays for itself.",
+    "source_url": "https://coffeyresidential.com/journal/do-you-need-an-architect"
+  },
+  {
+    "slug": "what-to-ask-an-architect-first-meeting",
+    "title": "What to ask an architect at the first meeting",
+    "date": "2026-06-05",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/meadow-grove-dining-area.webp",
+    "image_count": 3,
+    "word_count": 800,
+    "deck": "The questions that tell you if it is the right studio.",
+    "source_url": "https://coffeyresidential.com/journal/what-to-ask-an-architect-first-meeting"
+  },
+  {
+    "slug": "how-long-to-design-and-build-a-house",
+    "title": "How long does it take to design and build a house?",
+    "date": "2026-06-02",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/modern-detached-external-front.webp",
+    "image_count": 3,
+    "word_count": 900,
+    "deck": "An honest timeline for a house, stage by stage.",
+    "source_url": "https://coffeyresidential.com/journal/how-long-to-design-and-build-a-house"
+  },
+  {
+    "slug": "building-a-new-house-on-land",
+    "title": "Building a new house on land: where to begin",
+    "date": "2026-05-20",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/cove-ridge-dusk.webp",
+    "image_count": 3,
+    "word_count": 930,
+    "deck": "Land, planning, budget and brief, in the order they actually matter.",
+    "source_url": "https://coffeyresidential.com/journal/building-a-new-house-on-land"
+  },
+  {
+    "slug": "a-new-house-that-doesnt-look-new",
+    "title": "Designing a new house that doesn't look like a new build",
+    "date": "2026-05-13",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/modern-barn-external.webp",
+    "image_count": 3,
+    "word_count": 870,
+    "deck": "How to build new without the plastic.",
+    "source_url": "https://coffeyresidential.com/journal/a-new-house-that-doesnt-look-new"
+  },
+  {
+    "slug": "knock-down-rebuild-or-renovate",
+    "title": "Knock down and rebuild, or renovate? How to decide",
+    "date": "2026-05-06",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/helios-house-external-view.webp",
+    "image_count": 3,
+    "word_count": 900,
+    "deck": "When to keep an old house, and when to replace it.",
+    "source_url": "https://coffeyresidential.com/journal/knock-down-rebuild-or-renovate"
+  },
+  {
+    "slug": "a-house-shaped-by-its-site",
+    "title": "A house shaped by its site: designing in open country",
+    "date": "2026-04-22",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/cove-ridge-and-long-view.webp",
+    "image_count": 3,
+    "word_count": 870,
+    "deck": "Letting the land, the weather and the light write the brief.",
+    "source_url": "https://coffeyresidential.com/journal/a-house-shaped-by-its-site"
+  },
+  {
+    "slug": "planning-permission-conservation-area",
+    "title": "Planning permission in a conservation area: what actually gets approved",
+    "date": "2026-04-15",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/hidden-house-garden-views.webp",
+    "image_count": 3,
+    "word_count": 950,
+    "deck": "What conservation areas protect, and what actually gets approved.",
+    "source_url": "https://coffeyresidential.com/journal/planning-permission-conservation-area"
+  },
+  {
+    "slug": "what-a-whole-house-refurbishment-involves",
+    "title": "What a whole-house refurbishment really involves",
+    "date": "2026-04-08",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/canyon-house-double-height-circulation.webp",
+    "image_count": 3,
+    "word_count": 960,
+    "deck": "Beyond a new kitchen. What 'whole-house' actually means.",
+    "source_url": "https://coffeyresidential.com/journal/what-a-whole-house-refurbishment-involves"
+  },
+  {
+    "slug": "designing-a-house-around-natural-light",
+    "title": "How to design a house around natural light",
+    "date": "2026-03-18",
+    "author": "Phil Coffey",
+    "hero_image": "images/webp/helios-house-living-and-fireplace.webp",
+    "image_count": 3,
+    "word_count": 950,
+    "deck": "The studio's first principle, made practical.",
+    "source_url": "https://coffeyresidential.com/journal/designing-a-house-around-natural-light"
+  },
+  {
     "slug": "dont-let-foundation-problems-give-you-headaches",
     "title": "Don't let foundation problems give you headaches",
     "date": "2026-04-27",

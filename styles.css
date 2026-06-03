@@ -4386,3 +4386,81 @@ html { overflow-x: clip; }
   .wordmark { font-size: 15px; }
   .hero__head { font-size: 44px; }
 }
+
+/* ==========================================================
+   LINK AFFORDANCE & INTERACTION  (accessibility / UX)
+   Base links are text-decoration:none + color:inherit, which left
+   in-body links invisible and inert. This block gives content links a
+   hairline underline that darkens on hover, gives arrow/tile links real
+   hover feedback, and makes keyboard focus visible everywhere.
+   ========================================================== */
+
+/* In-content prose links: visibly a link, with a hover that darkens the underline */
+.brief-text a,
+.materials__row .v a,
+.about__rhs p a,
+.principal__body a,
+.article-body a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 180ms ease, color 180ms ease;
+}
+.brief-text a:hover,
+.materials__row .v a:hover,
+.about__rhs p a:hover,
+.principal__body a:hover,
+.article-body a:hover {
+  text-decoration-color: var(--fg);
+}
+
+/* Arrow / "more" action links: underline on hover */
+.section-head .more:hover,
+.home-journal .more:hover,
+.journal__head .more:hover,
+.studio-journal .more:hover,
+.about__more:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Project tiles: hovering the card now also underlines "View project" */
+.project-row:hover .pr-foot .read {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Keyboard focus visibility */
+a:focus-visible,
+.project-row:focus-visible,
+.cta-btn:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+}
+
+/* Journal article sub-headings (used in the longer guide posts) */
+.article-body h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 56px 0 18px;
+}
+.article-body h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 40px 0 12px;
+}
+@media (max-width: 800px) {
+  .article-body h2 { font-size: 26px; margin-top: 44px; }
+}
