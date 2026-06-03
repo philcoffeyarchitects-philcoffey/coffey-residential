@@ -4414,21 +4414,21 @@ html { overflow-x: clip; }
   text-decoration-color: var(--fg);
 }
 
-/* Arrow / "more" action links: underline on hover */
+/* Arrow / "more" action links and project tiles: fade on hover, matching
+   "More about the studio" (no underline). */
+.section-head .more,
+.home-journal .more,
+.journal__head .more,
+.studio-journal .more,
+.project-row .pr-foot .read {
+  transition: opacity 200ms ease;
+}
 .section-head .more:hover,
 .home-journal .more:hover,
 .journal__head .more:hover,
-.studio-journal .more:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-/* Project tiles: hovering the card now also underlines "View project" */
+.studio-journal .more:hover,
 .project-row:hover .pr-foot .read {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  opacity: 0.55;
 }
 
 /* Keyboard focus visibility */
