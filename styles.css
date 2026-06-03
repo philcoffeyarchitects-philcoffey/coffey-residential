@@ -519,7 +519,7 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
 .project-row .pr-image--portrait img {
   height: auto;
 }
-.project-row:hover .pr-image img { filter: brightness(0.78); }
+.project-row .pr-image:hover img { filter: brightness(0.78); }
 
 .project-row .pr-content {
   padding: 56px;
@@ -4426,8 +4426,12 @@ html { overflow-x: clip; }
 .section-head .more:hover,
 .home-journal .more:hover,
 .journal__head .more:hover,
-.studio-journal .more:hover,
-.project-row:hover .pr-foot .read {
+.studio-journal .more:hover {
+  opacity: 0.55;
+}
+/* Tie each project-row effect to its own element, not the whole band:
+   the image darkens on the image, "View project" fades on itself. */
+.project-row .pr-foot .read:hover {
   opacity: 0.55;
 }
 
