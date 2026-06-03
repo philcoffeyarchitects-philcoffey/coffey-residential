@@ -423,8 +423,6 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
   font-size: 13px;
   color: var(--fg);
   text-decoration: none;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 4px;
   transition: opacity 200ms ease;
 }
 .about__more:hover { opacity: 0.55; }
@@ -4420,8 +4418,7 @@ html { overflow-x: clip; }
 .section-head .more:hover,
 .home-journal .more:hover,
 .journal__head .more:hover,
-.studio-journal .more:hover,
-.about__more:hover {
+.studio-journal .more:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
