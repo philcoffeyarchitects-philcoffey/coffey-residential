@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<link rel="icon" type="image/png" href="images/webp/logo.webp" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:title" content="Coffey Residential — Residential Architects, London" />
 <meta property="og:description" content="A London residential architecture studio. Founded by Phil Coffey in 2005; new houses and whole-house refurbishments, with Phil on every project." />
 <meta property="og:type" content="website" />
@@ -20,7 +22,7 @@
 <link rel="preload" href="fonts/pt-serif-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/pt-serif-400-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/work-sans-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/jetbrains-mono-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fragment-mono-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <!-- font-preload:end -->
 <!-- fonts-inline:start -->
 <style>
@@ -614,6 +616,11 @@
   <a class="cta-btn hero__cta" href="contact.html">Get in touch &nbsp;→</a>
 </section>
 
+<!-- Scroll-reveal curtain: the cream content below scrolls up and covers
+     the pinned hero. Its full-width backing (::before) hides the full-bleed
+     image's side strips on viewports wider than the content column. -->
+<div class="scroll-curtain">
+
 <!-- ===== About ===== -->
 <section class="section about">
   <div class="about__grid">
@@ -966,6 +973,7 @@
   <div>© 2026</div>
 </footer>
 
+</div><!-- /.scroll-curtain -->
 </div><!-- /.shell -->
 
   <script src="site.js" defer></script>

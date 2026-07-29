@@ -18,10 +18,11 @@
   --serif:   'PT Serif', Georgia, serif;
   --caption: 'PT Serif Caption', 'PT Serif', Georgia, serif;
   --sans:    'Work Sans', Helvetica, Arial, sans-serif;
-  --mono:    'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --mono:    'Fragment Mono', 'IBM Plex Mono', ui-monospace, monospace;
 
   --gutter:  56px;
   --section: 120px;
+  --header-h: 80px;   /* height of the sticky .site-header (28px padding × 2 + content + 1px border) */
 }
 
 * { box-sizing: border-box; }
@@ -105,7 +106,13 @@ button { font: inherit; cursor: pointer; }
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 28px var(--gutter);
+  /* Full-width bar + hairline so the header caps the full-bleed hero cleanly
+     across the whole viewport. Inner content re-aligns to the 1280px content
+     column via the max() padding, so brand/nav stay level with the hero text
+     and the content below. */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 28px max(var(--gutter), calc((100vw - 1280px) / 2));
   background: var(--bg);
   border-bottom: 1px solid var(--line);
   gap: 24px;
@@ -252,13 +259,51 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
    Image takes its natural aspect (no cropping). The overlay sits on
    top and adapts to whatever height the image gives us. */
 .hero {
-  position: relative;
+  /* Pinned: the hero stays put while the cream content below scrolls up and
+     covers it (see .scroll-curtain). Sticky works because the hero's
+     containing block (.shell) is the full height of the page. The box stays
+     inside .shell so the overlaid text/CTA align to the content column;
+     only the image (below) bleeds full-width, so overflow stays visible. */
+  position: sticky;
+  top: var(--header-h);   /* pin just below the sticky header so the hero never slides up behind it */
+  z-index: 0;
   background: var(--fg);
-  overflow: hidden;
+  overflow: visible;
+}
+/* The scrolling curtain sits above the pinned hero. Its own background only
+   spans the content column, so a full-width ::before paints cream edge to
+   edge to cover the bleeding image's sides on wide screens. */
+.scroll-curtain {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+}
+.scroll-curtain::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  background: var(--bg);
+  z-index: -1;
+}
+@media (max-width: 800px) {
+  /* Disable the pin on phones/tablets — the hero there flows normally with
+     the CTA below the image, and a sticky reveal feels wrong at that size. */
+  .hero { position: relative; top: auto; z-index: auto; }
+  .scroll-curtain { z-index: auto; }
+  .scroll-curtain::before { display: none; }
 }
 .hero__media {
   position: relative;
-  aspect-ratio: 3 / 2;     /* reserves space before the JS-set img loads */
+  /* Image runs full-bleed, edge to edge of the viewport, out of the .shell
+     cap, but with a capped height so a wide screen doesn't make the hero
+     tower over the fold. object-fit: cover on the img fills it at any ratio. */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: clamp(460px, 72vh, 780px);
+  overflow: hidden;
   background: var(--fg);   /* matches the dark overlay so any race state is invisible */
 }
 .hero__media img {
@@ -341,6 +386,7 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
      page below — which on mobile would mean white text invisibly
      overlaid on the page's cream background. */
   .hero__media {
+    height: auto;          /* release the desktop capped height on mobile */
     aspect-ratio: 4 / 3;
   }
   /* Darker overlay on mobile — the text-over-image needs more
@@ -993,14 +1039,33 @@ body.nav-open .nav-toggle__bars span:nth-child(3) { top: 6px; transform: rotate(
 /* Hero (project) — runs shell-edge to shell-edge, same as the home hero */
 .project-hero {
   padding: 0;
-  aspect-ratio: 3 / 2;       /* reserve space before the image loads */
+  /* Full-bleed image, edge to edge of the viewport (out of the .shell cap),
+     with a capped height so it matches the homepage hero and never towers
+     over the fold. The title block below stays in the contained column. */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: clamp(460px, 72vh, 780px);
   overflow: hidden;
 }
-.project-hero img {
+.project-hero > img,
+.project-hero > .landscape-frame {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+/* When the hero wraps a portrait image in a .landscape-frame, let it fill
+   the capped height rather than impose its own 3:2 ratio. */
+.project-hero > .landscape-frame {
+  aspect-ratio: auto;
+}
+@media (max-width: 800px) {
+  /* On phones/tablets, release the capped height back to a 3:2 frame
+     (the hero is already full-width there since .shell fills the screen). */
+  .project-hero {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
 }
 /* Landscape frame — used when a project has no landscape hero image.
    Wraps a portrait <img> in a 3:2 box and crops with object-fit: cover.
@@ -4464,3 +4529,10 @@ textarea:focus-visible {
 @media (max-width: 800px) {
   .article-body h2 { font-size: 26px; margin-top: 44px; }
 }
+
+/* ===== Fragment Mono — self-hosted woff2 (mono / eyebrow labels).
+   Replaces JetBrains Mono as --mono. Single weight (400) by design. ===== */
+@font-face{font-family:'Fragment Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/fragment-mono-400-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Fragment Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/fragment-mono-400-normal-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Fragment Mono';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/fragment-mono-400-italic-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Fragment Mono';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/fragment-mono-400-italic-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
